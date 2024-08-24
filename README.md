@@ -38,7 +38,7 @@ Codevault is a simple and powerful CLI tool designed to manage your code snippet
 
 ### **Get Started: Building Your Snippet Sanctuary**
 
-[**1. Install Rust:**
+**1. Install Rust:**
 **Prerequisites:**
 You'll need Rust and Cargo installed on your system. - Check Rust's presence: `rustc --version`
 ![enter image description here](https://github.com/Quiflern/Codevault/blob/main/docs/rust-version.png?raw=true)
