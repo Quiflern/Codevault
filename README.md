@@ -91,7 +91,7 @@ The **`capture`** command save your code and add it to snippet collection.
 
 **Demo:**
 
-[capture-demo.webm](https://github.com/user-attachments/assets/d1831499-1920-4b5d-a7d4-a639be302064)
+[capture-command-demo.webm](https://github.com/user-attachments/assets/4b96cf74-b179-4947-854f-33b5ff1fa9a6)
 
 ### Copy Command:
 
@@ -112,7 +112,7 @@ The **`copy`** command displays the code stored in snippet, and shows only the c
 
 **Demo:**
 
-[copy-demo.webm](https://github.com/user-attachments/assets/4d3c3b33-a555-4969-8f50-1cf03923840e)
+[copy-command -demo.webm](https://github.com/user-attachments/assets/2b8203f2-64b3-4e72-ac67-5bde268197ea)
 
 ### Delete Command:
 
@@ -134,7 +134,7 @@ The **`delete`** command remove snippets from your snippet collection.
 
 **Demo:**
 
-[delete-demo.webm](https://github.com/user-attachments/assets/ee23373f-fc53-49f2-b089-380faeecfd02)
+[delete-command -demo.webm](https://github.com/user-attachments/assets/5f67010c-4b9b-457d-8c17-03e68c5a3899)
 
 ### Edit Command:
 
@@ -162,7 +162,7 @@ The `edit` command allows you edit existing snippets.
 
 **Demo:**
 
-[edit-function-with-id.webm](https://github.com/user-attachments/assets/056e8352-d765-49ec-8608-05741fe58946)
+[edit-command-with-id.webm](https://github.com/user-attachments/assets/03e653cb-e4a5-4e99-9129-2e5fc93a8157)
 
 ### Export Command:
 
@@ -222,7 +222,8 @@ The **`export`** command exports saved snippets in language-specific format from
   `    target/debug/codevault export --language Rust --path "codes/rust"`
 
 **Demo :**
-DEMO VIDEO
+
+[export-command-demo.webm](https://github.com/user-attachments/assets/c06c35f8-58aa-4bce-b86a-510cb03e9ab7)
 
 ### View Command:
 
@@ -269,6 +270,7 @@ The **`view`** command allows you to list all snippets.
     ```
 
 **Demo :**
-DEMO VIDEO
+
+[view-command-demo.webm](https://github.com/user-attachments/assets/2d731dfe-8f78-4dce-a5fc-7f4264d462b7)
 
 **Embrace a Smoother, More Productive Coding Experience with Codevault.** Start capturing, organizing, and reusing your code snippets to level up your development experience.
