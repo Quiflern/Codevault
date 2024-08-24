@@ -132,7 +132,8 @@ The **`delete`** command remove snippets from your snippet collection.
     target/debug/codevault delete --id 1
 
 **Demo:**
-DEMO VIDEO
+
+[delete-demo.webm](https://github.com/user-attachments/assets/ee23373f-fc53-49f2-b089-380faeecfd02)
 
 ### Edit Command:
 
@@ -149,17 +150,18 @@ The `edit` command allows you edit existing snippets.
 
 **Examples:**
 
-1. **Delete snippet with tags:**
+1. **Edit snippet with tags:**
    ```
    target/debug/codevault edit -t data
    ```
-2. **Delete snippet with ID 1:**
+2. **Edit snippet with ID 1:**
    ```
    target/debug/codevault edit -i 1
    ```
 
 **Demo:**
-DEMO VIDEO
+
+[edit-function-with-id.webm](https://github.com/user-attachments/assets/056e8352-d765-49ec-8608-05741fe58946)
 
 ### Export Command:
 
