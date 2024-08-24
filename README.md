@@ -41,8 +41,8 @@ Codevault is a simple and powerful CLI tool designed to manage your code snippet
 [**1. Install Rust:**
 **Prerequisites:**
 You'll need Rust and Cargo installed on your system. - Check Rust's presence: `rustc --version`
-https://github.com/Quiflern/Codevault/blob/main/docs/rust-version.png?raw=true
-](https://github.com/Quiflern/Codevault/blob/main/docs/rust-version.png?raw=true)
+![enter image description here](https://github.com/Quiflern/Codevault/blob/main/docs/rust-version.png?raw=true)
+
 **Install Rust:**
 Install using the official installer: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
 OR
