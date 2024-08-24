@@ -219,8 +219,9 @@ The **`export`** command exports saved snippets in language-specific format from
 - **Path examples:**
   If the path is not specified it export to **`snippet_exports`** directory, which will created on the root directory (_i.e location where the program is opened)_.
   `    target/debug/codevault export --language Rust --path "codes/rust"`
-  **Demo :**
-  DEMO VIDEO
+
+**Demo :**
+DEMO VIDEO
 
 ### View Command:
 
