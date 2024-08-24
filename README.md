@@ -110,7 +110,8 @@ The **`copy`** command displays the code stored in snippet, and shows only the c
     target/debug/codevault copy --id 1
 
 **Demo:**
-DEMO VIDEO
+
+[copy-demo.webm](https://github.com/user-attachments/assets/4d3c3b33-a555-4969-8f50-1cf03923840e)
 
 ### Delete Command:
 
