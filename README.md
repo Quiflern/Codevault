@@ -89,7 +89,9 @@ The **`capture`** command save your code and add it to snippet collection.
     target/debug/codevault capture --description "This is short description for the code snippet" --language "JavaScript" --tag "sample javascript code"
 
 **Demo:**
+
 [capture-demo.webm](https://github.com/user-attachments/assets/d1831499-1920-4b5d-a7d4-a639be302064)
+
 ### Copy Command:
 
 The **`copy`** command displays the code stored in snippet, and shows only the code of the snippet.
