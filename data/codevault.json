@@ -1,0 +1,794 @@
+[
+  {
+    "tag": "<% %>",
+    "description": "This is the ASP.NET code block tag, which encloses server-side code that will be executed on the server before the page is sent to the client.",
+    "code": "<%@ Page Language=\"C#\" %>\n<html>\n<head>\n</head>\n<body>\n    <h1>Welcome!</h1>\n    <p>Current Date and Time: <%= DateTime.Now.ToString() %> </p>\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 15:29:51.788611152 +01:00",
+    "language": "ASP",
+    "id": 1
+  },
+  {
+    "tag": "#include <stdio.h>",
+    "description": "This preprocessor directive includes the standard input/output library, allowing use of functions like printf() and scanf().",
+    "code": "#include <stdio.h>\n\nint main() {\n  printf(\"Hello, world!\\n\");\n  return 0;\n}\n",
+    "timestamp": "2024-08-24 15:32:34.086426842 +01:00",
+    "language": "C",
+    "id": 2
+  },
+  {
+    "tag": "using system",
+    "description": "This directive imports the System namespace, providing access to core classes and functionalities in C#.",
+    "code": "using System;\n\npublic class Example {\n  public static void Main(string[] args) {\n    Console.WriteLine(\"Hello from C#!\");\n  }\n}\n",
+    "timestamp": "2024-08-24 15:34:24.370002630 +01:00",
+    "language": "C#",
+    "id": 3
+  },
+  {
+    "tag": "#include <iostream>",
+    "description": "This preprocessor directive includes the input/output stream library, providing classes like std::cout and std::cin",
+    "code": "#include <iostream>\n\nint main() {\n  std::cout << \"Hello from C++!\" << std::endl;\n  return 0;\n}\n",
+    "timestamp": "2024-08-24 15:36:48.154344185 +01:00",
+    "language": "C++",
+    "id": 4
+  },
+  {
+    "tag": "asp:Textbox",
+    "description": "A server-side control to create a text input field within the webpage.",
+    "code": "<%@ Page Language=\"C#\" %>\n<html>\n<head>\n</head>\n<body>\n    <asp:TextBox ID=\"MyTextBox\" runat=\"server\" Text=\"Enter text here\" />\n    <asp:Button ID=\"SubmitButton\" runat=\"server\" Text=\"Submit\" />\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 15:40:38.286774452 +01:00",
+    "language": "ASP",
+    "id": 5
+  },
+  {
+    "tag": "int main() {}",
+    "description": "The main() function is the entry point for C programs. Code execution begins here.",
+    "code": "#include <stdio.h>\n\nint main() {\n  int number = 10;\n  printf(\"The number is: %d\\n\", number);\n  return 0; \n}\n",
+    "timestamp": "2024-08-24 15:41:48.710069886 +01:00",
+    "language": "C",
+    "id": 6
+  },
+  {
+    "tag": "public class",
+    "description": "Defines a public class, making it accessible from other code files.",
+    "code": "using System;\n\npublic class Example {\n  public int Number { get; set; }\n\n  public void PrintNumber() {\n    Console.WriteLine($\"The number is: {Number}\");\n  }\n}\n",
+    "timestamp": "2024-08-24 15:43:02.043835111 +01:00",
+    "language": "C#",
+    "id": 7
+  },
+  {
+    "tag": "std::string",
+    "description": "A class from the std namespace used to represent and manipulate strings.",
+    "code": "#include <iostream>\n#include <string>\n\nint main() {\n  std::string message = \"Hello, world!\";\n  std::cout << message << std::endl;\n  return 0;\n}\n",
+    "timestamp": "2024-08-24 15:44:15.035318081 +01:00",
+    "language": "C++",
+    "id": 8
+  },
+  {
+    "tag": "asp:Repeater",
+    "description": "A server-side control to dynamically dislay data from a data source in a repeating pattern.",
+    "code": "<%@ Page Language=\"C#\" %>\n<html>\n<head>\n</head>\n<body>\n    <asp:Repeater ID=\"MyRepeater\" runat=\"server\" DataSourceID=\"MyDataSource\">\n        <ItemTemplate>\n            <h2><%# Eval(\"Name\") %></h2>\n            <p><%# Eval(\"Description\") %></p>\n        </ItemTemplate>\n    </asp:Repeater>\n    <asp:SqlDataSource ID=\"MyDataSource\" runat=\"server\" ConnectionString=\"...\" SelectCommand=\"...\" />\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 15:45:44.951595669 +01:00",
+    "language": "ASP",
+    "id": 9
+  },
+  {
+    "tag": "for loop",
+    "description": "The for loop is a common way to iterate over a block of code a set number of times",
+    "code": "#include <stdio.h>\n\nint main() {\n  for (int i = 0; i < 5; i++) {\n    printf(\"Iteration %d\\n\", i);\n  }\n  return 0;\n}\n",
+    "timestamp": "2024-08-24 15:47:12.352688128 +01:00",
+    "language": "C",
+    "id": 10
+  },
+  {
+    "tag": "List<T>",
+    "description": "The generic type represents a dynamically resizable list of objects, allowing for data manipulation.",
+    "code": "using System;\nusing System.Collections.Generic;\n\npublic class Example {\n  public static void Main(string[] args) {\n    List<string> names = new List<string> { \"John\", \"Jane\", \"Bob\" };\n    foreach (string name in names) {\n      Console.WriteLine($\"Name: {name}\");\n    }\n  }\n}\n",
+    "timestamp": "2024-08-24 15:48:30.942656604 +01:00",
+    "language": "C#",
+    "id": 11
+  },
+  {
+    "tag": "class",
+    "description": "The class keyword is used to define a custom data type with data member (variables) and member functions (methods).",
+    "code": "#include <iostream>\n\nclass Rectangle {\npublic:\n  int width, height;\n\n  int area() {\n    return width * height;\n  }\n};\n\nint main() {\n  Rectangle rect;\n  rect.width = 5;\n  rect.height = 10;\n  std::cout << \"Area of rectangle: \" << rect.area() << std::endl;\n  return 0;\n}\n",
+    "timestamp": "2024-08-24 15:49:47.428594996 +01:00",
+    "language": "C++",
+    "id": 12
+  },
+  {
+    "tag": "CSS, layout, centering, flexbox, alignment",
+    "description": "Different methods for centering elements in CSS, including flexbox for both horizontal and vertical alignment and text-align for centering text content.",
+    "code": "/* Centering an element both horizontally and vertically */\n.centered-element {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh; /* Occupy full viewport height */\n  width: 100vw;  /* Occupy full viewport width */\n  background-color: lightblue; /* Example background color */\n}\n\n/* Centering text inside a container */\n.container {\n  text-align: center;\n}\n",
+    "timestamp": "2024-08-24 16:11:13.079978819 +01:00",
+    "language": "CSS",
+    "id": 13
+  },
+  {
+    "tag": "card, styling",
+    "description": "basic structure for creating a simple card layout using CSS, including elements for a card header, body, image, and styling for the card's appearance.",
+    "code": "/* Basic card structure */\n.card {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  padding: 20px;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n  width: 300px;\n}\n\n/* Content within the card */\n.card-header {\n  font-weight: bold;\n  margin-bottom: 10px;\n}\n\n.card-body {\n  font-size: 16px;\n}\n\n/* Card image */\n.card-image {\n  max-width: 100%;\n  height: auto;\n  margin-bottom: 10px;\n}\n",
+    "timestamp": "2024-08-24 16:12:43.321381158 +01:00",
+    "language": "CSS",
+    "id": 14
+  },
+  {
+    "tag": "hover effect, interactive",
+    "description": "simple hover effect that changes the background color of an element upon mouse interaction, incorporating a smooth transition for a visually pleasing effect.",
+    "code": ".hover-effect {\n  background-color: #eee;\n  transition: background-color 0.3s ease;\n}\n\n.hover-effect:hover {\n  background-color: #ddd;\n}\n",
+    "timestamp": "2024-08-24 16:14:10.902469892 +01:00",
+    "language": "CSS",
+    "id": 15
+  },
+  {
+    "tag": "arrays, output",
+    "description": "Basic syntax of the D programming language, creating an array of numbers, iterating over it and outputting elements with their indices. It also uses the sum method to calculate the sum of all numbers in the array.",
+    "code": "import std.stdio;\n\nvoid main() {\n  int[] numbers = [1, 2, 3, 4, 5];\n\n  foreach (i, num; numbers) {\n    writeln(\"Number \", i + 1, \": \", num);\n  }\n\n  writeln(\"Total: \", numbers.sum());\n}\n",
+    "timestamp": "2024-08-24 16:15:39.350063186 +01:00",
+    "language": "D",
+    "id": 16
+  },
+  {
+    "tag": "parameters",
+    "description": "This snippet introduces functions in D. It defines a function called square that takes an integer as input and returns its square value. The main function calls square with 5 as the argument and outputs the result.",
+    "code": "import std.stdio;\n\nint square(int number) {\n  return number * number;\n}\n\nvoid main() {\n  int result = square(5);\n  writeln(\"Square of 5 is: \", result);\n}\n",
+    "timestamp": "2024-08-24 16:16:57.200818340 +01:00",
+    "language": "D",
+    "id": 17
+  },
+  {
+    "tag": "template, formatting",
+    "description": "Syntax to dynamically format a string by concatenating 'Hello, ' with a provided name. It shows how the format function can be used to insert values into string templates efficiently.",
+    "code": "import std.stdio;\n\nvoid main() {\n  string message = \"Hello, \";\n  string name = \"World\";\n\n  string formattedMessage = format(\"%s%s!\", message, name);\n\n  writeln(formattedMessage); // Outputs \"Hello, World!\"\n}\n",
+    "timestamp": "2024-08-24 16:20:09.254472520 +01:00",
+    "language": "D",
+    "id": 18
+  },
+  {
+    "tag": "factorial, recursion",
+    "description": "implementation of a factorial function using recursion. It handles the base case of fact(0) = 1 and utilizes the recursive definition to compute factorial for other numbers.",
+    "code": "-module(factorial).\n\n-export([fact/1]).\n\nfact(0) -> 1;\nfact(N) when N > 0 -> N * fact(N - 1).\n",
+    "timestamp": "2024-08-24 16:21:19.624192569 +01:00",
+    "language": "Erlang",
+    "id": 19
+  },
+  {
+    "tag": "conrurrency, Erlang, message passing, actors, process",
+    "description": "Core principles of message passing in Erlang. A process is spawned, and messages are sent between them using the send function. The receiving process uses a receive statement to process incoming messages.",
+    "code": "-module(example).\n\n-export([start/0, loop/1]).\n\nstart() ->\n    spawn(example, loop, [self()]).\n\nloop(Pid) ->\n    receive\n        {from, Message} ->\n            io:format(\"Received message: ~p from ~p~n\", [Message, from]),\n            loop(Pid);\n        _ ->\n            loop(Pid)\n    end.\n\nmain(Argv) ->\n    example:start(),\n    send(self(), {self(), \"Hello, Erlang!\"}).\n",
+    "timestamp": "2024-08-24 16:22:56.252854963 +01:00",
+    "language": "Erlang",
+    "id": 20
+  },
+  {
+    "tag": "list, Erlang, datastructure, recursion, functionality",
+    "description": " Set of functions operating on Erlang lists, including getting the head, tail, reversing the list, and checking if the list is empty. It highlights common Erlang list processing techniques using recursion.",
+    "code": "-module(list_ops).\n\n-export([head/1, tail/1, reverse/1, is_empty/1]).\n\nhead([H|_]) -> H;\nhead([]) -> error(\"Empty list\").\n\ntail([_ | T]) -> T;\ntail([]) -> error(\"Empty list\").\n\nreverse([]) -> [];\nreverse([H|T]) -> reverse(T) ++ [H].\n\nis_empty([]) -> true;\nis_empty(_) -> false.\n",
+    "timestamp": "2024-08-24 16:24:05.840471125 +01:00",
+    "language": "Erlang",
+    "id": 21
+  },
+  {
+    "tag": "list, Erlang, datastructure, recursion, functionality",
+    "description": " Set of functions operating on Erlang lists, including getting the head, tail, reversing the list, and checking if the list is empty. It highlights common Erlang list processing techniques using recursion.",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+    "timestamp": "2024-08-24 16:25:32.661003612 +01:00",
+    "language": "Erlang",
+    "id": 22
+  },
+  {
+    "tag": "boolean, fmt, variable Go, string",
+    "description": "Basic sdata types and variable assignment in Go, showing how to declare variables and store different data like strings, integers, and boolean values",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    name := \"John Doe\"\n    age := 30\n    isAdult := true\n\n    fmt.Println(\"Name:\", name)\n    fmt.Println(\"Age:\", age)\n    fmt.Println(\"Adult:\", isAdult)\n}\n",
+    "timestamp": "2024-08-24 16:26:57.967765247 +01:00",
+    "language": "Go",
+    "id": 23
+  },
+  {
+    "tag": "greet function, return value, sprintf, parameters",
+    "description": "Defining and calling functions in Go, the greet function takes a name string and restuns a formatted greeting message. The main function calls greet with a name and then prints the result.",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc greet(name string) string {\n    return fmt.Sprintf(\"Hello, %s!\", name)\n}\n\nfunc main() {\n    message := greet(\"Alice\")\n    fmt.Println(message)\n}\n",
+    "timestamp": "2024-08-24 16:30:02.843170560 +01:00",
+    "language": "Go",
+    "id": 24
+  },
+  {
+    "tag": "recursion, functional programming, list",
+    "description": "Calculate the nth Fibonacci number using recursion",
+    "code": "fib :: Int -> Int\nfib 0 = 0\nfib 1 = 1\nfib n = fib (n-1) + fib (n-2)\n\nmain :: IO ()\nmain = print $ fib 10\n",
+    "timestamp": "2024-08-24 16:35:54.238863784 +01:00",
+    "language": "Haskell",
+    "id": 25
+  },
+  {
+    "tag": "list, filtering, mapping, higher-order functions",
+    "description": "Filters out even numebrs from a list and then doubles the remaining numbers",
+    "code": "doubleOdd :: [Int] -> [Int]\ndoubleOdd numbers = map (*2) (filter odd numbers)\n\nmain :: IO ()\nmain = print $ doubleOdd [1,2,3,4,5]\n",
+    "timestamp": "2024-08-24 16:37:20.404706130 +01:00",
+    "language": "Haskell",
+    "id": 26
+  },
+  {
+    "tag": "Safety, lists, concatenation ,pattern matching",
+    "description": "Safety concatenates two lists using pattern matching to ensure type consistency",
+    "code": "concatLists :: [a] -> [a] -> [a]\nconcatLists [] ys = ys\nconcatLists (x:xs) ys = x : concatLists xs ys\n\nmain :: IO ()\nmain = print $ concatLists [1,2,3] [\"a\", \"b\", \"c\"]\n",
+    "timestamp": "2024-08-24 16:38:44.187259287 +01:00",
+    "language": "Haskell",
+    "id": 27
+  },
+  {
+    "tag": "Form Input Styling, Validation",
+    "description": "Form with name and email fields, including basic styling and required validation",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Simple HTML Form</title>\n  <style>\n    body {\n      font-family: sans-serif;\n    }\n    form {\n      width: 300px;\n      margin: 0 auto;\n      padding: 20px;\n      border: 1px solid #ccc;\n      border-radius: 5px;\n    }\n    label {\n      display: block;\n      margin-bottom: 5px;\n    }\n    input[type=\"text\"], input[type=\"email\"] {\n      width: 100%;\n      padding: 10px;\n      margin-bottom: 10px;\n      border: 1px solid #ccc;\n      border-radius: 3px;\n      box-sizing: border-box;\n    }\n    input[type=\"submit\"] {\n      background-color: #4CAF50;\n      color: white;\n      padding: 10px 20px;\n      border: none;\n      border-radius: 3px;\n      cursor: pointer;\n    }\n  </style>\n</head>\n<body>\n  <form action=\"/submit\" method=\"post\">\n    <label for=\"name\">Name:</label>\n    <input type=\"text\" id=\"name\" name=\"name\" required>\n\n    <label for=\"email\">Email:</label>\n    <input type=\"email\" id=\"email\" name=\"email\" required>\n\n    <input type=\"submit\" value=\"Submit\">\n  </form>\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 16:41:56.769933692 +01:00",
+    "language": "HTML",
+    "id": 28
+  },
+  {
+    "tag": "HTML, Image Gallery, Responsive Design, CSS, Media Queries",
+    "description": "Responsive image gallery that adjusts image size based on screen width",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Responsive Image Gallery</title>\n  <style>\n    .gallery {\n      display: flex;\n      flex-wrap: wrap;\n      justify-content: center;\n    }\n    .gallery img {\n      width: 200px;\n      height: 200px;\n      margin: 10px;\n      object-fit: cover;\n    }\n    @media (max-width: 768px) {\n      .gallery img {\n        width: 150px;\n        height: 150px;\n      }\n    }\n    @media (max-width: 480px) {\n      .gallery img {\n        width: 100px;\n        height: 100px;\n      }\n    }\n  </style>\n</head>\n<body>\n  <div class=\"gallery\">\n    <img src=\"image1.jpg\" alt=\"Image 1\">\n    <img src=\"image2.jpg\" alt=\"Image 2\">\n    <img src=\"image3.jpg\" alt=\"Image 3\">\n    <img src=\"image4.jpg\" alt=\"Image 4\">\n  </div>\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 16:43:04.887841092 +01:00",
+    "language": "HTML",
+    "id": 29
+  },
+  {
+    "tag": "Table, Styling, Headers, Body, data",
+    "description": "Table structure with header, body and styling to create and readble layout for data representation",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Table Example</title>\n  <style>\n    table {\n      border-collapse: collapse;\n      width: 100%;\n    }\n    th, td {\n      border: 1px solid black;\n      padding: 8px;\n      text-align: left;\n    }\n    th {\n      background-color: #f2f2f2;\n    }\n  </style>\n</head>\n<body>\n  <table>\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Age</th>\n        <th>City</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>John Doe</td>\n        <td>30</td>\n        <td>New York</td>\n      </tr>\n      <tr>\n        <td>Jane Smith</td>\n        <td>25</td>\n        <td>Los Angeles</td>\n      </tr>\n      <tr>\n        <td>Peter Jones</td>\n        <td>40</td>\n        <td>Chicago</td>\n      </tr>\n    </tbody>\n  </table>\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 16:44:00.780316906 +01:00",
+    "language": "HTML",
+    "id": 30
+  },
+  {
+    "tag": "Java, Temperature Conversion, Scanner, Input, Output",
+    "description": "Take a temperature in Celscius as input, convert it to Fahrenheit, and print the result to the console. it uses the Scanner class for input and performs the converstion calculations.",
+    "code": "import java.util.Scanner;\n\npublic class TemperatureConverter {\n  public static void main(String[] args) {\n    Scanner scanner = new Scanner(System.in);\n\n    System.out.println(\"Enter temperature in Celsius:\");\n    double celsius = scanner.nextDouble();\n\n    double fahrenheit = celsius * 9 / 5 + 32;\n\n    System.out.println(celsius + \" degrees Celsius is equal to \" + fahrenheit + \" degrees Fahrenheit.\");\n  }\n}\n",
+    "timestamp": "2024-08-24 16:45:33.874279431 +01:00",
+    "language": "Java",
+    "id": 31
+  },
+  {
+    "tag": "Java, arraylist, data structures, loop, remove element",
+    "description": "use of an Arraylist to store a grocery list. it adds items, iterates through the list to print it, and removes an item from the list before displaying the updated list.",
+    "code": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class GroceryList {\n  public static void main(String[] args) {\n    List<String> items = new ArrayList<>();\n\n    items.add(\"Milk\");\n    items.add(\"Eggs\");\n    items.add(\"Bread\");\n    items.add(\"Cheese\");\n    items.add(\"Apples\");\n\n    System.out.println(\"Grocery List:\");\n    for (String item : items) {\n      System.out.println(\"- \" + item);\n    }\n\n    items.remove(\"Cheese\");\n\n    System.out.println(\"\\nUpdated Grocery List:\");\n    for (String item : items) {\n      System.out.println(\"- \" + item);\n    }\n  }\n}\n",
+    "timestamp": "2024-08-24 16:46:59.102371793 +01:00",
+    "language": "Java",
+    "id": 32
+  },
+  {
+    "tag": "Java, arthematic operations, integer",
+    "description": "arthematic operations like addition, subtraction, multiplication, and division with interger. it perform these calculations and prints the results",
+    "code": "public class Calculator {\n  public static void main(String[] args) {\n    int num1 = 5;\n    int num2 = 3;\n\n    int sum = num1 + num2;\n    int difference = num1 - num2;\n    int product = num1 * num2;\n    int quotient = num1 / num2;\n\n    System.out.println(\"Sum: \" + sum);\n    System.out.println(\"Difference: \" + difference);\n    System.out.println(\"Product: \" + product);\n    System.out.println(\"Quotient: \" + quotient);\n  }\n}\n",
+    "timestamp": "2024-08-24 16:48:15.003728824 +01:00",
+    "language": "Java",
+    "id": 33
+  },
+  {
+    "tag": "array, loop, iteration, manipulation",
+    "description": "array operations in JavaScript. it includes looping through elements, adding a new element, creating a new array with a specific ranger, and printing the arrays to the console.",
+    "code": "const myArray = [\"apple\", \"banana\", \"cherry\", \"grape\"];\n\n// Loop through the array and print each element\nfor (let i = 0; i < myArray.length; i++) {\n  console.log(myArray[i]);\n}\n\n// Add a new element to the end of the array\nmyArray.push(\"orange\");\n\n// Print the updated array\nconsole.log(\"\\nUpdated Array:\");\nfor (let i = 0; i < myArray.length; i++) {\n  console.log(myArray[i]);\n}\n\n// Create a new array with elements from 1 to 10\nconst numbers = [];\nfor (let i = 1; i <= 10; i++) {\n  numbers.push(i);\n}\n\n// Print the numbers array\nconsole.log(\"\\nNumbers Array:\");\nfor (let i = 0; i < numbers.length; i++) {\n  console.log(numbers[i]);\n}\n",
+    "timestamp": "2024-08-24 16:50:05.151001405 +01:00",
+    "language": "JavaScript",
+    "id": 34
+  },
+  {
+    "tag": "Javascript, function, return value, function call",
+    "description": "creating and using functions in JavaScript. It includes a function to calculate the area of a rectangle, taking width and height as parameters, and a function to generate a greeting message.",
+    "code": "function calculateArea(width, height) {\n  return width * height;\n}\n\nlet rectangleWidth = 10;\nlet rectangleHeight = 5;\n\nlet area = calculateArea(rectangleWidth, rectangleHeight);\nconsole.log(\"The area of the rectangle is: \" + area);\n\nfunction greet(name) {\n  return \"Hello, \" + name + \"!\";\n}\n\nlet myName = \"Alice\";\n\nlet greeting = greet(myName);\nconsole.log(greeting);\n",
+    "timestamp": "2024-08-24 16:51:20.220818420 +01:00",
+    "language": "JavaScript",
+    "id": 35
+  },
+  {
+    "tag": "object, JavaScript, access, property, update",
+    "description": "working with objects in JavaScript. It includes creating an object with initial properties, accessing and updating those properties, and using bracket notation for dynamic proeprty access.",
+    "code": "const myObject = {\n  name: \"John Doe\",\n  age: 30,\n  occupation: \"Software Engineer\"\n};\n\nconsole.log(\"Name:\", myObject.name);\nconsole.log(\"Age:\", myObject.age);\nconsole.log(\"Occupation:\", myObject.occupation);\n\nmyObject.city = \"New York\";\nmyObject.country = \"USA\";\n\nconsole.log(\"\\nUpdated Object:\");\nconsole.log(\"City:\", myObject.city);\nconsole.log(\"Country:\", myObject.country);\n\n// Accessing object properties using bracket notation\nconsole.log(\"\\nAccessing property using bracket notation:\");\nconsole.log(\"Age:\", myObject[\"age\"]);\n",
+    "timestamp": "2024-08-24 16:52:44.033760527 +01:00",
+    "language": "JavaScript",
+    "id": 36
+  },
+  {
+    "tag": "JSON, object, data",
+    "description": "JSON object representing a person with various attributes including personal information, address, skills and hobbies.",
+    "code": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"occupation\": \"Software Engineer\",\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Anytown\",\n    \"state\": \"CA\",\n    \"zip\": \"12345\"\n  },\n  \"skills\": [\n    \"JavaScript\",\n    \"Python\",\n    \"Java\",\n    \"C++\"\n  ],\n  \"hobbies\": [\n    \"Hiking\",\n    \"Coding\",\n    \"Gaming\"\n  ]\n}\n",
+    "timestamp": "2024-08-24 16:55:57.162753793 +01:00",
+    "language": "JSON",
+    "id": 37
+  },
+  {
+    "tag": "product_id, name, price, category, JSON",
+    "description": "JSON array containing information about multiple products, each with its ID, name, price and category.",
+    "code": "[\n  {\n    \"product_id\": \"12345\",\n    \"name\": \"Laptop\",\n    \"price\": 1200.00,\n    \"category\": \"Electronics\"\n  },\n  {\n    \"product_id\": \"67890\",\n    \"name\": \"Smartphone\",\n    \"price\": 800.00,\n    \"category\": \"Electronics\"\n  },\n  {\n    \"product_id\": \"11111\",\n    \"name\": \"Book\",\n    \"price\": 25.00,\n    \"category\": \"Literature\"\n  }\n]\n",
+    "timestamp": "2024-08-24 16:57:45.278384674 +01:00",
+    "language": "JSON",
+    "id": 38
+  },
+  {
+    "tag": "JSON, GeoJSON, Geographical Data",
+    "description": "GeoJSON object describing a single feature - 'Centeral Park'. It includes the name, description, and geographic coordinates for the park.",
+    "code": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"properties\": {\n        \"name\": \"Central Park\",\n        \"description\": \"Large public park in New York City\"\n      },\n      \"geometry\": {\n        \"type\": \"Polygon\",\n        \"coordinates\": [\n          [\n            [-73.9712, 40.7829],\n            [-73.9711, 40.7692],\n            [-73.9581, 40.7694],\n            [-73.9581, 40.7830],\n            [-73.9712, 40.7829]\n          ]\n        ]\n      }\n    }\n  ]\n}\n",
+    "timestamp": "2024-08-24 16:59:31.756142555 +01:00",
+    "language": "JSON",
+    "id": 39
+  },
+  {
+    "tag": "Lua, function, recursion",
+    "description": "recursive function factorial which calculates the factorial of a given number. it calles itself until it reaches the base of case n=0 and returns the product of all numbers 1 to n.",
+    "code": "function factorial(n)\n  if n == 0 then\n    return 1\n  else\n    return n * factorial(n - 1)\n  end\nend\n\nprint(factorial(5)) -- Output: 120\n",
+    "timestamp": "2024-08-24 17:01:05.586017445 +01:00",
+    "language": "Lua",
+    "id": 40
+  },
+  {
+    "tag": "lua, table, iteration",
+    "description": "iterating through a Lua table using the iparis function. The code prints the index and value of each element in the tbale",
+    "code": "local table = {\n  \"apple\", \"banana\", \"cherry\"\n}\n\nfor i, v in ipairs(table) do\n  print(i, v)\nend\n\n-- Output:\n-- 1 apple\n-- 2 banana\n-- 3 cherry\n",
+    "timestamp": "2024-08-24 17:02:03.940411644 +01:00",
+    "language": "Lua",
+    "id": 41
+  },
+  {
+    "tag": "Lua, file handling, input, output",
+    "description": "open and read a file in lua. it loops through each line of the file and prints it contents to the cosole. error handling is implemented in case the file doesn't exists.",
+    "code": "local file = io.open(\"data.txt\", \"r\")\nif file then\n  for line in file:lines() do\n    print(line)\n  end\n  file:close()\nelse\n  print(\"Error opening file\")\nend\n",
+    "timestamp": "2024-08-24 17:03:15.878944132 +01:00",
+    "language": "Lua",
+    "id": 42
+  },
+  {
+    "tag": "makefile, compilation, buildsystem",
+    "description": "rules of compiling a C programm called main. It uses variables for the compiler, flags, and defines depencies and targets.",
+    "code": "CC = gcc\nCFLAGS = -Wall -g\n\nall: main\n\nmain: main.o\n\t$(CC) $(CFLAGS) main.o -o main\n\nmain.o: main.c\n\t$(CC) $(CFLAGS) -c main.c\n\nclean:\n\trm -f *.o main\n",
+    "timestamp": "2024-08-24 17:04:19.570747508 +01:00",
+    "language": "Makefile",
+    "id": 43
+  },
+  {
+    "tag": "makefile, multiple, build automation",
+    "description": "compilation of a project with multiple course fiels (.c). it utilizes pattern rules and variables for simplifying build commands.",
+    "code": "PROJECT = myproject\nSRCS = main.c utils.c\nOBJS = $(SRCS:.c=.o)\n\nall: $(PROJECT)\n\n$(PROJECT): $(OBJS)\n\tgcc $(OBJS) -o $(PROJECT)\n\n%.o: %.c\n\tgcc -c $< -o $@\n\nclean:\n\trm -f $(OBJS) $(PROJECT)\n",
+    "timestamp": "2024-08-24 17:05:20.741247451 +01:00",
+    "language": "Makefile",
+    "id": 44
+  },
+  {
+    "tag": "Makefile, build, Execution, Clean",
+    "description": "combines compilation, execution and clean up into separate targets. it also uses PHONY target to explicityly define non-file targets.",
+    "code": ".PHONY: all clean run\n\nall: build run\n\nbuild:\n\tgcc -Wall main.c -o main\n\nrun:\n\t./main\n\nclean:\n\trm main\n",
+    "timestamp": "2024-08-24 17:06:28.194061121 +01:00",
+    "language": "Makefile",
+    "id": 45
+  },
+  {
+    "tag": "markdown, blog, post",
+    "description": "sime blog post using markdown",
+    "code": "# My Amazing Blog Post\n\nThis is an introductory paragraph about my exciting blog post. It can be short and snappy, or a bit longer, but it should draw the reader in and pique their interest.\n\n## Subheading One\n\nThis is a subheading for a section of the blog post. It helps organize the content and makes it easier to read. \n\n**Here is some bold text**, and here is some *italicized text*. I can also create [links](https://www.example.com) and code snippets like this:\n\n```python\nprint(\"Hello, world!\")\n```\n\n",
+    "timestamp": "2024-08-24 17:08:29.817980270 +01:00",
+    "language": "Markdown",
+    "id": 46
+  },
+  {
+    "tag": "Markdown, Project proposal, Structure",
+    "description": "Project proposal structure using headings, bullet points, and concise language for presenting key aspects of the proposed mobile app project.",
+    "code": "## My Recipe\n\n**Ingredients:**\n\n* 1 cup flour\n* 1/2 cup sugar\n* 2 eggs\n* 1/4 cup milk\n* 1 teaspoon vanilla extract\n\n**Instructions:**\n\n1. Preheat oven to 350 degrees F (175 degrees C).\n2. Combine all ingredients in a bowl and mix until well blended.\n3. Pour batter into a greased 9-inch baking pan.\n4. Bake for 30 minutes, or until a toothpick inserted into the center comes out clean.\n\n**Tips:**\n\n* You can add chocolate chips, nuts, or other toppings to your cake.\n* Be sure to let the cake cool completely before frosting.\n\nEnjoy!\n",
+    "timestamp": "2024-08-24 17:10:25.905571318 +01:00",
+    "language": "Markdown",
+    "id": 47
+  },
+  {
+    "tag": "Markdown, recipe, formatting",
+    "description": "Simple recipe format using headings, bold text, lists, and indentation for clarity and structure.",
+    "code": "## Project Proposal: A New Mobile App\n\n**1. Introduction:**\n\nThis proposal outlines the concept for a new mobile app designed to [describe the app's purpose]. We believe there is a significant demand for [target audience] who need a solution for [app's problem-solving aspect].\n\n**2. Key Features:**\n\n* **Feature 1:** [briefly describe the feature]\n* **Feature 2:** [briefly describe the feature]\n* **Feature 3:** [briefly describe the feature]\n\n**3. Market Analysis:**\n\n[Describe the target market, existing competition, and potential user base]\n\n**4. Development Plan:**\n\n[Outline the development stages, including technology stack, team structure, and estimated timeline]\n\n**5. Budget:**\n\n[Present a breakdown of development costs, including personnel, infrastructure, and marketing expenses]\n\n**6. Conclusion:**\n\nWe are confident that this mobile app has the potential to [app's positive impact] and [app's market potential]. We strongly believe this is a worthwhile project to invest in.\n",
+    "timestamp": "2024-08-24 17:11:59.084212913 +01:00",
+    "language": "Markdown",
+    "id": 48
+  },
+  {
+    "tag": "matrix manipulation, linear algebra",
+    "description": "Eigenvalues and eigenvectors fo a matrix, demonstrting matrixmanipulation in MATLAB.",
+    "code": "% Define a sample matrix\nA = [1 2 3; 4 5 6; 7 8 9];\n\n% Calculate eigenvalues and eigenvectors\n[eigenvectors, eigenvalues] = eig(A);\n\n% Display results\ndisp(\"Eigenvalues:\");\ndisp(eigenvalues);\n\n% Display eigenvectors\ndisp(\"Eigenvectors:\");\ndisp(eigenvectors);\n",
+    "timestamp": "2024-08-24 17:14:06.352031648 +01:00",
+    "language": "MATLAB",
+    "id": 49
+  },
+  {
+    "tag": "Data Visualization, Plotting",
+    "description": "Generate a 3D scatter plor of a data points, illustrating data visualization capabilities in MATLAB.",
+    "code": "% Create sample data points\nx = rand(100,1);\ny = rand(100,1);\nz = rand(100,1);\n\n% Generate a 3D scatter plot\nfigure;\nscatter3(x, y, z);\n\n% Set plot title and axis labels\ntitle('3D Scatter Plot');\nxlabel('X-axis');\nylabel('Y-axis');\nzlabel('Z-axis');\n",
+    "timestamp": "2024-08-24 17:15:24.260170005 +01:00",
+    "language": "MATLAB",
+    "id": 50
+  },
+  {
+    "tag": "Signal Processing Filtering",
+    "description": "low-pass filter toa noisey signal, showcasing signal processing functionlaity in MATLAB.",
+    "code": "% Generate a noisy signal\nt = 0:0.01:10;\nsignal = sin(2*pi*t) + rand(size(t));\n\n% Create a low-pass filter\ncutoff_freq = 1;\nfilter_order = 4;\n[b,a] = butter(filter_order, cutoff_freq/(fs/2), 'low');\n\n% Filter the signal\nfiltered_signal = filter(b,a,signal);\n\n% Plot the original and filtered signals\nfigure;\nsubplot(2,1,1);\nplot(t,signal);\ntitle('Original Signal');\n\nsubplot(2,1,2);\nplot(t,filtered_signal);\ntitle('Filtered Signal');\n",
+    "timestamp": "2024-08-24 17:16:28.374926406 +01:00",
+    "language": "MATLAB",
+    "id": 51
+  },
+  {
+    "tag": "List Manipulation, Recursion",
+    "description": "calculating the sum of a lists of intergers using recursion.",
+    "code": "let rec sum list = \n  match list with\n  | [] -> 0\n  | head :: tail -> head + (sum tail)\n\nlet example_list = [1; 2; 3; 4; 5];\n\nlet result = sum example_list;\n\nPrintf.printf \"Sum of list: %d\\n\" result;;\n",
+    "timestamp": "2024-08-24 17:17:52.984064965 +01:00",
+    "language": "OCaml",
+    "id": 52
+  },
+  {
+    "tag": "functional programming, higher-order functions",
+    "description": "Higher-order function that applies a given function to each element of a list.",
+    "code": "let map f list =\n  let rec map_aux acc list =\n    match list with\n    | [] -> acc\n    | head :: tail -> map_aux (f head :: acc) tail\n  in\n  map_aux [] (List.rev list)\n\nlet double x = x * 2;\n\nlet doubled_list = map double [1; 2; 3; 4; 5];\n\nList.iter (Printf.printf \"%d \" ) doubled_list;\nPrintf.printf \"\\n\";;\n",
+    "timestamp": "2024-08-24 17:18:52.576216732 +01:00",
+    "language": "OCaml",
+    "id": 53
+  },
+  {
+    "tag": "trees, data structure",
+    "description": "building and traversing binary tree data structure",
+    "code": "type 'a tree =\n  | Empty\n  | Node of 'a * 'a tree * 'a tree\n\nlet tree = Node(1, Node(2, Empty, Empty), Node(3, Empty, Empty));\n\nlet rec inorder tree =\n  match tree with\n  | Empty -> []\n  | Node(value, left, right) ->\n      (inorder left) @ [value] @ (inorder right)\n\nlet inorder_traversal = inorder tree;\n\nList.iter (Printf.printf \"%d \" ) inorder_traversal;\nPrintf.printf \"\\n\";;\n",
+    "timestamp": "2024-08-24 17:19:42.422194018 +01:00",
+    "language": "OCaml",
+    "id": 54
+  },
+  {
+    "tag": "arthematic operations, pascal",
+    "description": "basic data types and arthemetic operations in Pascal.",
+    "code": "program ArithmeticExample;\n\nvar\n  num1, num2 : integer;\n  result : real;\n\nbegin\n  // Assign values to variables\n  num1 := 10;\n  num2 := 5;\n\n  // Perform arithmetic operations\n  result := (num1 + num2) / 2;\n\n  // Display results\n  WriteLn('The sum of num1 and num2 is: ', num1 + num2);\n  WriteLn('The difference between num1 and num2 is: ', num1 - num2);\n  WriteLn('The product of num1 and num2 is: ', num1 * num2);\n  WriteLn('The quotient of num1 and num2 is: ', result);\nend.\n",
+    "timestamp": "2024-08-24 17:20:53.307596789 +01:00",
+    "language": "Pascal",
+    "id": 55
+  },
+  {
+    "tag": "arrays, loops",
+    "description": "use of arrays andloops to manipulate and process date in Pascal",
+    "code": "program ArrayExample;\n\nconst\n  ARRAY_SIZE = 10;\n\nvar\n  numbers : array[1..ARRAY_SIZE] of integer;\n  i : integer;\n\nbegin\n  // Initialize array elements\n  for i := 1 to ARRAY_SIZE do\n    numbers[i] := i * 2;\n  end;\n\n  // Display array elements\n  WriteLn('Array Elements:');\n  for i := 1 to ARRAY_SIZE do\n    WriteLn('numbers[', i, ']: ', numbers[i]);\n  end;\nend.\n",
+    "timestamp": "2024-08-24 17:21:34.770695638 +01:00",
+    "language": "Pascal",
+    "id": 56
+  },
+  {
+    "tag": "file input, output",
+    "description": "reads data from a file and performs a calculation before writing the result to another file.",
+    "code": "program FileIOExample;\n\nvar\n  inputFile, outputFile : text;\n  number : integer;\n  result : real;\n\nbegin\n  // Open input and output files\n  Assign(inputFile, 'input.txt');\n  Reset(inputFile);\n\n  Assign(outputFile, 'output.txt');\n  Rewrite(outputFile);\n\n  // Read data from input file\n  ReadLn(inputFile, number);\n\n  // Perform calculation\n  result := number * 2.5;\n\n  // Write result to output file\n  WriteLn(outputFile, 'The result is: ', result);\n\n  // Close files\n  Close(inputFile);\n  Close(outputFile);\nend.\n",
+    "timestamp": "2024-08-24 17:22:33.627627144 +01:00",
+    "language": "Pascal",
+    "id": 57
+  },
+  {
+    "tag": "extraction, phone number, perl",
+    "description": "extracts phone numbers from a string using regular expressions",
+    "code": "#!/usr/bin/perl\n\nuse strict;\nuse warnings;\n\n# Input string\nmy $text = \"This is a string with some phone numbers: 123-456-7890 and 555-123-4567.\";\n\n# Regular expression pattern for phone numbers\nmy $pattern = qr/\\d{3}-\\d{3}-\\d{4}/;\n\n# Find all phone numbers in the string\nmy @phone_numbers = $text =~ /$pattern/g;\n\n# Print the extracted phone numbers\nprint \"Phone Numbers:\\n\";\nforeach my $phone (@phone_numbers) {\n  print \"$phone\\n\";\n}\n",
+    "timestamp": "2024-08-24 17:23:30.999202149 +01:00",
+    "language": "Perl",
+    "id": 58
+  },
+  {
+    "tag": "perl, hashmaps, data manipulation",
+    "description": "stores and processes data about fruits and their prices using a hashmap",
+    "code": "#!/usr/bin/perl\n\nuse strict;\nuse warnings;\n\n# Create a hashmap to store fruit names and prices\nmy %fruits = (\n  \"apple\" => 1.50,\n  \"banana\" => 0.75,\n  \"orange\" => 1.00\n);\n\n# Iterate over the hashmap and display fruit names and prices\nforeach my $fruit (keys %fruits) {\n  print \"$fruit: $fruits{$fruit}\\n\";\n}\n\n# Calculate the total price of all fruits\nmy $total_price = 0;\nforeach my $price (values %fruits) {\n  $total_price += $price;\n}\n\n# Print the total price\nprint \"Total price: $total_price\\n\";\n",
+    "timestamp": "2024-08-24 17:25:16.198702549 +01:00",
+    "language": "Perl",
+    "id": 59
+  },
+  {
+    "tag": "file handling, loops",
+    "description": "reads fdata from a file line by line and performs processing on each line",
+    "code": "#!/usr/bin/perl\n\nuse strict;\nuse warnings;\n\n# Open the input file\nopen my $fh, '<', 'data.txt' or die \"Error opening file: $!\";\n\n# Read each line from the file\nwhile (my $line = <$fh>) {\n  # Remove leading and trailing whitespace\n  chomp $line;\n\n  # Process the line\n  # (replace this with your actual processing logic)\n  print \"Processed line: $line\\n\";\n}\n\n# Close the file\nclose $fh;\n",
+    "timestamp": "2024-08-24 17:26:09.739941566 +01:00",
+    "language": "Perl",
+    "id": 60
+  },
+  {
+    "tag": "File Handling, Read, Write, PHP",
+    "description": "Demonstrates basic file handling in PHP, including writing to a file and reading from a file.",
+    "code": "<?php\n// File handling in PHP\n\n// Writing to a file\n$file = fopen(\"example.txt\", \"w\");\nif ($file) {\n    fwrite($file, \"Hello, World!\\n\");\n    fwrite($file, \"This is a file handling example in PHP.\");\n    fclose($file);\n    echo \"File written successfully.\";\n} else {\n    echo \"Failed to open file.\";\n}\n\n// Reading from a file\n$file = fopen(\"example.txt\", \"r\");\nif ($file) {\n    while (($line = fgets($file)) !== false) {\n        echo $line;\n    }\n    fclose($file);\n} else {\n    echo \"Failed to open file.\";\n}\n?>\n\n",
+    "timestamp": "2024-08-24 17:32:55.391411763 +01:00",
+    "language": "PHP",
+    "id": 61
+  },
+  {
+    "tag": "Database, MySQL, Connection, Query, PHP",
+    "description": "Shows how to connect to a MySQL database, create a table, insert data, and handle errors in PHP.",
+    "code": "<?php\n// Database connection and querying in PHP\n\n$servername = \"localhost\";\n$username = \"root\";\n$password = \"\";\n$dbname = \"test_db\";\n\n// Create connection\n$conn = new mysqli($servername, $username, $password, $dbname);\n\n// Check connection\nif ($conn->connect_error) {\n    die(\"Connection failed: \" . $conn->connect_error);\n}\n\n// Create table\n$sql = \"CREATE TABLE IF NOT EXISTS Users (\n    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,\n    firstname VARCHAR(30) NOT NULL,\n    lastname VARCHAR(30) NOT NULL,\n    email VARCHAR(50),\n    reg_date TIMESTAMP\n)\";\n\nif ($conn->query($sql) === TRUE) {\n    echo \"Table Users created successfully\";\n} else {\n    echo \"Error creating table: \" . $conn->error;\n}\n\n// Insert data\n$sql = \"INSERT INTO Users (firstname, lastname, email)\nVALUES ('John', 'Doe', 'john.doe@example.com')\";\n\nif ($conn->query($sql) === TRUE) {\n    echo \"New record created successfully\";\n} else {\n    echo \"Error: \" . $sql . \"<br>\" . $conn->error;\n}\n\n// Close connection\n$conn->close();\n?>\n",
+    "timestamp": "2024-08-24 17:33:57.095901719 +01:00",
+    "language": "PHP",
+    "id": 62
+  },
+  {
+    "tag": "Form Handling, Validation, PHP",
+    "description": "Demonstrates form handling and validation in PHP, including sanitizing user inputs and displaying validation errors.",
+    "code": "<?php\n// Form handling and validation in PHP\n\nfunction test_input($data) {\n    $data = trim($data);\n    $data = stripslashes($data);\n    $data = htmlspecialchars($data);\n    return $data;\n}\n\n$name = $email = \"\";\n$name_err = $email_err = \"\";\n\nif ($_SERVER[\"REQUEST_METHOD\"] == \"POST\") {\n    if (empty($_POST[\"name\"])) {\n        $name_err = \"Name is required\";\n    } else {\n        $name = test_input($_POST[\"name\"]);\n        if (!preg_match(\"/^[a-zA-Z-' ]*$/\",$name)) {\n            $name_err = \"Only letters and white space allowed\";\n        }\n    }\n\n    if (empty($_POST[\"email\"])) {\n        $email_err = \"Email is required\";\n    } else {\n        $email = test_input($_POST[\"email\"]);\n        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {\n            $email_err = \"Invalid email format\";\n        }\n    }\n}\n?>\n\n<!DOCTYPE html>\n<html>\n<body>\n\n<h2>PHP Form Validation Example</h2>\n<form method=\"post\" action=\"<?php echo htmlspecialchars($_SERVER[\"PHP_SELF\"]);?>\">\n  Name: <input type=\"text\" name=\"name\">\n  <span><?php echo $name_err;?></span>\n  <br><br>\n  E-mail: <input type=\"text\" name=\"email\">\n  <span><?php echo $email_err;?></span>\n  <br><br>\n  <input type=\"submit\" name=\"submit\" value=\"Submit\">\n</form>\n\n<?php\necho \"<h2>Your Input:</h2>\";\necho $name;\necho \"<br>\";\necho $email;\n?>\n\n</body>\n</html>\n",
+    "timestamp": "2024-08-24 17:35:03.040544745 +01:00",
+    "language": "PHP",
+    "id": 63
+  },
+  {
+    "tag": "Web Scraping, BeautifulSoup, Requests, Python",
+    "description": "Uses BeautifulSoup and Requests to scrape a webpage, extract titles, links, and meta description.",
+    "code": "from bs4 import BeautifulSoup\nimport requests\n\n# URL to scrape\nurl = \"https://example.com\"\n\n# Send HTTP request\nresponse = requests.get(url)\nhtml_content = response.content\n\n# Parse HTML\nsoup = BeautifulSoup(html_content, 'html.parser')\n\n# Extract and print titles\nfor title in soup.find_all('h1'):\n    print(title.get_text())\n\n# Extract and print all links\nfor link in soup.find_all('a'):\n    print(link.get('href'))\n\n# Extract meta description\nmeta_description = soup.find('meta', attrs={'name': 'description'})\nif meta_description:\n    print(meta_description.get('content'))\n",
+    "timestamp": "2024-08-24 17:37:03.371974127 +01:00",
+    "language": "Python",
+    "id": 64
+  },
+  {
+    "tag": "Data Analysis, Pandas, DataFrame, Python",
+    "description": "Demonstrates data manipulation with Pandas, including creating a DataFrame, modifying it, filtering data, and saving to a CSV file.",
+    "code": "import pandas as pd\n\n# Create DataFrame\ndata = {\n    'Name': ['John', 'Anna', 'Peter', 'Linda'],\n    'Age': [28, 24, 35, 32],\n    'City': ['New York', 'Paris', 'Berlin', 'London']\n}\ndf = pd.DataFrame(data)\n\n# Display DataFrame\nprint(\"Original DataFrame:\")\nprint(df)\n\n# DataFrame operations\ndf['Age'] = df['Age'] + 1  # Increment age by 1\ndf['Country'] = ['USA', 'France', 'Germany', 'UK']  # Add new column\n\nprint(\"\\nModified DataFrame:\")\nprint(df)\n\n# Filter data\nfiltered_df = df[df['Age'] > 30]\nprint(\"\\nFiltered DataFrame (Age > 30):\")\nprint(filtered_df)\n\n# Save to CSV\ndf.to_csv('people.csv', index=False)\nprint(\"\\nData saved to people.csv\")\n",
+    "timestamp": "2024-08-24 17:37:59.424300979 +01:00",
+    "language": "Python",
+    "id": 65
+  },
+  {
+    "tag": "Web Development, Flask, Python, Web App",
+    "description": "A simple Flask application with different routes to handle requests, including dynamic content and form handling.",
+    "code": "from flask import Flask, render_template, request\n\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return \"Welcome to the Flask Web App!\"\n\n@app.route('/hello/<name>')\ndef hello(name):\n    return f\"Hello, {name}!\"\n\n@app.route('/form', methods=['GET', 'POST'])\ndef form():\n    if request.method == 'POST':\n        name = request.form['name']\n        email = request.form['email']\n        return f\"Received Name: {name}, Email: {email}\"\n    return '''\n        <form method=\"post\">\n            Name: <input type=\"text\" name=\"name\"><br>\n            Email: <input type=\"text\" name=\"email\"><br>\n            <input type=\"submit\" value=\"Submit\">\n        </form>\n    '''\n\nif __name__ == '__main__':\n    app.run(debug=True)\n",
+    "timestamp": "2024-08-24 17:39:00.298786743 +01:00",
+    "language": "Python",
+    "id": 66
+  },
+  {
+    "tag": "Data Manipulation, dplyr, R, DataFrame",
+    "description": "Shows how to manipulate data using the dplyr package, including creating a DataFrame, modifying, filtering, and saving data.",
+    "code": "library(dplyr)\n\n# Create DataFrame\ndata <- data.frame(\n    Name = c('John', 'Anna', 'Peter', 'Linda'),\n    Age = c(28, 24, 35, 32),\n    City = c('New York', 'Paris', 'Berlin', 'London')\n)\n\n# Display original data\nprint(\"Original DataFrame:\")\nprint(data)\n\n# Data manipulation\ndata <- data %>%\n    mutate(Age = Age + 1, Country = c('USA', 'France', 'Germany', 'UK')) %>%\n    filter(Age > 30)\n\nprint(\"Modified DataFrame (Age > 30):\")\nprint(data)\n\n# Save to CSV\nwrite.csv(data, \"people.csv\", row.names = FALSE)\nprint(\"Data saved to people.csv\")\n",
+    "timestamp": "2024-08-24 17:40:11.072821517 +01:00",
+    "language": "R",
+    "id": 67
+  },
+  {
+    "tag": "Linear Regression, Modeling, R, Statistics",
+    "description": "Fits a linear regression model to sample data and plots the data with a regression line using ggplot2.",
+    "code": "# Load necessary library\nlibrary(ggplot2)\n\n# Generate sample data\nset.seed(123)\ndata <- data.frame(\n    x = rnorm(100, mean = 50, sd = 10),\n    y = rnorm(100, mean = 50, sd = 10)\n)\n\n# Fit linear model\nmodel <- lm(y ~ x, data = data)\n\n# Display summary of the model\nprint(summary(model))\n\n# Plot data and regression line\nggplot(data, aes(x = x, y = y)) +\n    geom_point() +\n    geom_smooth(method = \"lm\", se = FALSE) +\n    labs(title = \"Linear Regression Example\", x = \"X\", y = \"Y\")\n",
+    "timestamp": "2024-08-24 17:41:27.580439873 +01:00",
+    "language": "R",
+    "id": 68
+  },
+  {
+    "tag": "Data Visualization, ggplot2, R, Plotting",
+    "description": "Demonstrates how to create a boxplot using ggplot2 to visualize the distribution of values across different categories.",
+    "code": "library(ggplot2)\n\n# Create sample data\ndata <- data.frame(\n    Category = rep(c('A', 'B', 'C'), each = 10),\n    Value = c(rnorm(10, mean = 10, sd = 5), rnorm(10, mean = 20, sd = 5), rnorm(10, mean = 30, sd = 5))\n)\n\n# Plot data\np <- ggplot(data, aes(x = Category, y = Value, fill = Category)) +\n    geom_boxplot() +\n    labs(title = \"Boxplot of Values by Category\", x = \"Category\", y = \"Value\") +\n    theme_minimal()\n\n# Display plot\nprint(p)\n",
+    "timestamp": "2024-08-24 17:42:24.283657896 +01:00",
+    "language": "R",
+    "id": 69
+  },
+  {
+    "tag": "Web Development, Sinatra, Ruby, Web Server",
+    "description": "Implements a basic web server using Sinatra, including a root route, dynamic route, and a form handling route.",
+    "code": "require 'sinatra'\n\n# Root route\nget '/' do\n  \"Welcome to the Sinatra Web App!\"\nend\n\n# Dynamic route\nget '/hello/:name' do\n  \"Hello, #{params['name']}!\"\nend\n\n# Form route\nget '/form' do\n  erb :form\nend\n\npost '/form' do\n  \"Received Name: #{params[:name]}, Email: #{params[:email]}\"\nend\n\n__END__\n\n@@ form\n<form method=\"post\" action=\"/form\">\n  Name: <input type=\"text\" name=\"name\"><br>\n  Email: <input type=\"text\" name=\"email\"><br>\n  <input type=\"submit\" value=\"Submit\">\n</form>\n",
+    "timestamp": "2024-08-24 17:43:26.887819527 +01:00",
+    "language": "Ruby",
+    "id": 70
+  },
+  {
+    "tag": "File Handling, JSON, Parsing, Ruby",
+    "description": "Demonstrates how to handle files and parse JSON in Ruby, including writing data to a JSON file and reading from it.",
+    "code": "require 'json'\n\n# Writing to a JSON file\ndata = {\n  name: \"John Doe\",\n  age: 30,\n  city: \"New York\"\n}\n\nFile.open('data.json', 'w') do |file|\n  file.write(data.to_json)\nend\nputs \"Data written to data.json\"\n\n# Reading from a JSON file\nfile_content = File.read('data.json')\nparsed_data = JSON.parse(file_content, symbolize_names: true)\n\nputs \"Parsed Data:\"\nputs parsed_data\n",
+    "timestamp": "2024-08-24 17:44:16.130166445 +01:00",
+    "language": "Ruby",
+    "id": 71
+  },
+  {
+    "tag": "OOP, Class, Ruby, Object-Oriented",
+    "description": "Shows basic object-oriented programming in Ruby, including defining a class, creating instances, and working with attributes and methods.",
+    "code": "class Person\n  attr_accessor :name, :age\n\n  def initialize(name, age)\n    @name = name\n    @age = age\n  end\n\n  def greet\n    \"Hello, my name is #{@name} and I am #{@age} years old.\"\n  end\nend\n\n# Create instances of Person\njohn = Person.new(\"John Doe\", 30)\njane = Person.new(\"Jane Smith\", 25)\n\n# Print greetings\nputs john.greet\nputs jane.greet\n\n# Update attributes\njohn.age = 31\nputs \"John's new age: #{john.age}\"\n",
+    "timestamp": "2024-08-24 17:45:12.187392179 +01:00",
+    "language": "Ruby",
+    "id": 72
+  },
+  {
+    "tag": "scala, functional programming, collections",
+    "description": "Scala code snippet demonstrating the use of functional programming concepts with collections.",
+    "code": "object FunctionalCollectionsExample extends App {\n  // Sample data: a list of integers\n  val numbers = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\n\n  // Filtering even numbers\n  val evenNumbers = numbers.filter(_ % 2 == 0)\n  println(s\"Even Numbers: $evenNumbers\")\n\n  // Mapping to their squares\n  val squaredNumbers = numbers.map(n => n * n)\n  println(s\"Squared Numbers: $squaredNumbers\")\n\n  // Reducing to sum of all numbers\n  val sumOfNumbers = numbers.reduce(_ + _)\n  println(s\"Sum of Numbers: $sumOfNumbers\")\n\n  // Grouping by even and odd\n  val groupedByParity = numbers.groupBy(_ % 2)\n  println(s\"Grouped by Parity: $groupedByParity\")\n}\n",
+    "timestamp": "2024-08-24 17:52:17.907075010 +01:00",
+    "language": "Scala",
+    "id": 73
+  },
+  {
+    "tag": "sql, database, queries",
+    "description": "SQL code snippet demonstrating table creation, data insertion, and querying.",
+    "code": "-- Creating a table named 'employees'\nCREATE TABLE employees (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(100) NOT NULL,\n    position VARCHAR(50),\n    salary DECIMAL(10, 2),\n    hire_date DATE\n);\n\n-- Inserting data into the 'employees' table\nINSERT INTO employees (name, position, salary, hire_date)\nVALUES ('Alice Johnson', 'Software Engineer', 80000.00, '2023-01-15'),\n       ('Bob Smith', 'Data Scientist', 85000.00, '2023-03-22'),\n       ('Carol Davis', 'UX Designer', 75000.00, '2023-06-10');\n\n-- Query to select all employees with a salary greater than $75,000\nSELECT name, position, salary\nFROM employees\nWHERE salary > 75000\nORDER BY salary DESC;\n\n-- Query to count the number of employees hired in 2023\nSELECT COUNT(*) AS num_employees\nFROM employees\nWHERE YEAR(hire_date) = 2023;\n",
+    "timestamp": "2024-08-24 17:52:46.039961331 +01:00",
+    "language": "SQL",
+    "id": 74
+  },
+  {
+    "tag": "xml, data representation, hierarchical structure",
+    "description": "XML code snippet representing a hierarchical data structure for employee information.",
+    "code": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<company>\n    <department name=\"Engineering\">\n        <employee id=\"1\">\n            <name>Alice Johnson</name>\n            <position>Software Engineer</position>\n            <salary>80000.00</salary>\n            <hireDate>2023-01-15</hireDate>\n        </employee>\n        <employee id=\"2\">\n            <name>Bob Smith</name>\n            <position>Data Scientist</position>\n            <salary>85000.00</salary>\n            <hireDate>2023-03-22</hireDate>\n        </employee>\n    </department>\n    <department name=\"Design\">\n        <employee id=\"3\">\n            <name>Carol Davis</name>\n            <position>UX Designer</position>\n            <salary>75000.00</salary>\n            <hireDate>2023-06-10</hireDate>\n        </employee>\n    </department>\n</company>\n",
+    "timestamp": "2024-08-24 17:53:04.061808517 +01:00",
+    "language": "XML",
+    "id": 75
+  },
+  {
+    "tag": "yaml, configuration, data representation",
+    "description": "YAML code snippet representing a configuration file for a web application.",
+    "code": "# Configuration file for a web application\n\napp:\n  name: MyWebApp\n  version: 1.0.0\n  environment: production\n\ndatabase:\n  host: localhost\n  port: 5432\n  username: dbuser\n  password: securepassword\n  name: mydatabase\n\nserver:\n  host: 0.0.0.0\n  port: 8080\n  ssl: true\n  timeout: 300\n\nlogging:\n  level: info\n  file: /var/log/mywebapp.log\n\nfeatures:\n  authentication: true\n  analytics: true\n  notifications: false\n\ndependencies:\n  - library1: ^1.2.3\n  - library2: ~4.5.6\n  - library3: *7.8.9\n",
+    "timestamp": "2024-08-24 17:53:39.041241278 +01:00",
+    "language": "YAML",
+    "id": 76
+  },
+  {
+    "tag": "scala, functions, pattern matching",
+    "description": "Scala code snippet demonstrating basic function definition and pattern matching.",
+    "code": "object BasicFunctionsExample extends App {\n  // Function to calculate the factorial of a number\n  def factorial(n: Int): Int = n match {\n    case 0 => 1\n    case _ => n * factorial(n - 1)\n  }\n\n  // Function to describe a number\n  def describeNumber(num: Int): String = num match {\n    case x if x < 0 => \"Negative\"\n    case x if x == 0 => \"Zero\"\n    case _ => \"Positive\"\n  }\n\n  // Printing results\n  println(s\"Factorial of 5: ${factorial(5)}\")\n  println(s\"Description of -3: ${describeNumber(-3)}\")\n  println(s\"Description of 0: ${describeNumber(0)}\")\n  println(s\"Description of 7: ${describeNumber(7)}\")\n}\n",
+    "timestamp": "2024-08-24 17:53:59.935912837 +01:00",
+    "language": "Scala",
+    "id": 77
+  },
+  {
+    "tag": "scala, case classes, collections",
+    "description": "Scala code snippet demonstrating the use of case classes and collection operations.",
+    "code": "case class Person(name: String, age: Int)\n\nobject CaseClassesExample extends App {\n  val people = List(\n    Person(\"Alice\", 30),\n    Person(\"Bob\", 25),\n    Person(\"Carol\", 35)\n  )\n\n  // Filtering people older than 30\n  val olderThan30 = people.filter(_.age > 30)\n  println(s\"People older than 30: $olderThan30\")\n\n  // Mapping names to uppercase\n  val namesInUppercase = people.map(person => person.name.toUpperCase)\n  println(s\"Names in uppercase: $namesInUppercase\")\n\n  // Finding the oldest person\n  val oldestPerson = people.maxBy(_.age)\n  println(s\"The oldest person: $oldestPerson\")\n}\n",
+    "timestamp": "2024-08-24 17:54:26.016083545 +01:00",
+    "language": "Scala",
+    "id": 78
+  },
+  {
+    "tag": "sql, table creation, joins",
+    "description": "SQL code snippet demonstrating table creation, data insertion, and joining tables.",
+    "code": "-- Creating 'departments' table\nCREATE TABLE departments (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(100) NOT NULL\n);\n\n-- Creating 'employees' table\nCREATE TABLE employees (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(100) NOT NULL,\n    department_id INT,\n    salary DECIMAL(10, 2),\n    FOREIGN KEY (department_id) REFERENCES departments(id)\n);\n\n-- Inserting data into 'departments'\nINSERT INTO departments (name) VALUES ('Engineering'), ('Design');\n\n-- Inserting data into 'employees'\nINSERT INTO employees (name, department_id, salary) VALUES \n('Alice Johnson', 1, 80000.00),\n('Bob Smith', 1, 85000.00),\n('Carol Davis', 2, 75000.00);\n\n-- Query to join tables and get employee details along with their department names\nSELECT e.name AS employee_name, d.name AS department_name, e.salary\nFROM employees e\nJOIN departments d ON e.department_id = d.id\nORDER BY e.salary DESC;\n",
+    "timestamp": "2024-08-24 17:54:40.917057476 +01:00",
+    "language": "SQL",
+    "id": 79
+  },
+  {
+    "tag": "sql, aggregation, grouping",
+    "description": "SQL code snippet demonstrating aggregation functions and grouping data.",
+    "code": "-- Creating a 'sales' table\nCREATE TABLE sales (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    product VARCHAR(100),\n    amount DECIMAL(10, 2),\n    sale_date DATE\n);\n\n-- Inserting data into 'sales'\nINSERT INTO sales (product, amount, sale_date) VALUES\n('Laptop', 1200.00, '2024-01-10'),\n('Tablet', 300.00, '2024-01-15'),\n('Smartphone', 500.00, '2024-01-20'),\n('Laptop', 1150.00, '2024-02-10'),\n('Tablet', 310.00, '2024-02-15');\n\n-- Query to get total sales amount per product\nSELECT product, SUM(amount) AS total_sales\nFROM sales\nGROUP BY product\nORDER BY total_sales DESC;\n\n-- Query to get the average sale amount per month\nSELECT DATE_FORMAT(sale_date, '%Y-%m') AS month, AVG(amount) AS average_amount\nFROM sales\nGROUP BY month\nORDER BY month;\n",
+    "timestamp": "2024-08-24 17:55:01.671356323 +01:00",
+    "language": "SQL",
+    "id": 80
+  },
+  {
+    "tag": "xml, schema, validation",
+    "description": "XML Schema Definition (XSD) snippet defining the structure of employee data.",
+    "code": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  \n  <!-- Definition of an Employee element -->\n  <xs:element name=\"employee\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"name\" type=\"xs:string\"/>\n        <xs:element name=\"position\" type=\"xs:string\"/>\n        <xs:element name=\"salary\" type=\"xs:decimal\"/>\n        <xs:element name=\"hireDate\" type=\"xs:date\"/>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:int\" use=\"required\"/>\n    </xs:complexType>\n  </xs:element>\n  \n  <!-- Definition of a Company element containing multiple employees -->\n  <xs:element name=\"company\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"employee\" type=\"employee\" maxOccurs=\"unbounded\"/>\n      </xs:sequence>\n    </xs:complexType>\n  </xs:element>\n  \n</xs:schema>\n",
+    "timestamp": "2024-08-24 17:55:18.606765167 +01:00",
+    "language": "XML",
+    "id": 81
+  },
+  {
+    "tag": "xml, nested elements, hierarchical data",
+    "description": "XML snippet representing hierarchical data for a company with nested employee details.",
+    "code": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<company name=\"TechCorp\">\n    <department name=\"Engineering\">\n        <employee id=\"1\">\n            <name>Alice Johnson</name>\n            <position>Senior Developer</position>\n            <salary>95000.00</salary>\n            <hireDate>2023-01-15</hireDate>\n        </employee>\n        <employee id=\"2\">\n            <name>Bob Smith</name>\n            <position>Junior Developer</position>\n            <salary>70000.00</salary>\n            <hireDate>2023-03-22</hireDate>\n        </employee>\n    </department>\n    <department name=\"Marketing\">\n        <employee id=\"3\">\n            <name>Carol Davis</name>\n            <position>Marketing Specialist</position>\n            <salary>80000.00</salary>\n            <hireDate>2023-06-10</hireDate>\n        </employee>\n    </department>\n</company>\n",
+    "timestamp": "2024-08-24 17:55:34.143646073 +01:00",
+    "language": "XML",
+    "id": 82
+  },
+  {
+    "tag": "yaml, configuration, basic settings",
+    "description": "YAML snippet for basic application configuration with general settings.",
+    "code": "# Application Configuration\n\napplication:\n  name: MyApp\n  version: 1.0.0\n  environment: production\n\ndatabase:\n  host: db.example.com\n  port: 5432\n  username: admin\n  password: secret\n  name: appdb\n\nlogging:\n  level: debug\n  file: /var/log/myapp.log\n  max_size: 50MB\n\nserver:\n  host: 127.0.0.1\n  port: 8080\n  ssl_enabled: true\n\nfeatures:\n  authentication: true\n  analytics: true\n  notifications: false\n",
+    "timestamp": "2024-08-24 17:56:01.886062165 +01:00",
+    "language": "YAML",
+    "id": 83
+  },
+  {
+    "tag": "yaml, configuration, nested settings",
+    "description": "YAML snippet for a more complex application configuration with nested structures for API and services.",
+    "code": "# Detailed Application Configuration\n\napplication:\n  name: AdvancedApp\n  version: 2.3.1\n  environment: staging\n\nservices:\n  api:\n    base_url: https://api.advancedapp.com\n    timeout: 30s\n    retries: 3\n  caching:\n    enabled: true\n    type: redis\n    redis:\n      host: cache.example.com\n      port: 6379\n      db: 0\n    memcached:\n      host: cache-memcached.example.com\n      port: 11211\n\ndatabase:\n  connection:\n    host: db.advancedapp.com\n    port: 5432\n    username: user\n    password: supersecret\n    name: advanceddb\n    pool_size: 10\n  migrations:\n    enabled: true\n    script_location: /migrations/scripts\n\nlogging:\n  level: info\n  file: /var/log/advancedapp.log\n  max_size: 100MB\n  rotation:\n    daily: true\n    keep_days: 7\n\nfeatures:\n  authentication:\n    enabled: true\n    providers:\n      - google\n      - github\n  analytics:\n    enabled: true\n    tracking_id: UA-12345678-9\n  notifications:\n    enabled: true\n    channels:\n      - email\n      - sms\n  debugging:\n    enabled: false\n",
+    "timestamp": "2024-08-24 17:56:22.318313140 +01:00",
+    "language": "YAML",
+    "id": 84
+  },
+  {
+    "tag": "c++, classes, objects",
+    "description": "C++ code snippet demonstrating the use of classes and objects with encapsulation and member functions.",
+    "code": "#include <iostream>\n#include <string>\n\nclass Person {\nprivate:\n    std::string name;\n    int age;\n\npublic:\n    // Constructor\n    Person(const std::string& n, int a) : name(n), age(a) {}\n\n    // Getter for name\n    std::string getName() const {\n        return name;\n    }\n\n    // Getter for age\n    int getAge() const {\n        return age;\n    }\n\n    // Function to display person details\n    void display() const {\n        std::cout << \"Name: \" << name << \", Age: \" << age << std::endl;\n    }\n};\n\nint main() {\n    Person person1(\"Alice\", 30);\n    Person person2(\"Bob\", 25);\n\n    person1.display();\n    person2.display();\n\n    return 0;\n}\n",
+    "timestamp": "2024-08-24 18:00:42.889600317 +01:00",
+    "language": "C++",
+    "id": 85
+  },
+  {
+    "tag": "c++, templates, standard library",
+    "description": "C++ code snippet demonstrating templates and usage of standard library functions with vectors.",
+    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\n// Template function to print elements of a vector\ntemplate<typename T>\nvoid printVector(const std::vector<T>& vec) {\n    for (const auto& elem : vec) {\n        std::cout << elem << \" \";\n    }\n    std::cout << std::endl;\n}\n\nint main() {\n    std::vector<int> intVec = {1, 2, 3, 4, 5};\n    std::vector<std::string> strVec = {\"Hello\", \"World\", \"C++\"};\n\n    // Print integer vector\n    std::cout << \"Integer Vector: \";\n    printVector(intVec);\n\n    // Print string vector\n    std::cout << \"String Vector: \";\n    printVector(strVec);\n\n    // Sort and print integer vector\n    std::sort(intVec.begin(), intVec.end());\n    std::cout << \"Sorted Integer Vector: \";\n    printVector(intVec);\n\n    return 0;\n}\n",
+    "timestamp": "2024-08-24 18:00:54.911302929 +01:00",
+    "language": "C++",
+    "id": 86
+  },
+  {
+    "tag": "c++, file I/O, error handling",
+    "description": "C++ code snippet demonstrating file input/output operations with error handling.",
+    "code": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n    std::string filename = \"example.txt\";\n\n    // Writing to a file\n    std::ofstream outFile(filename);\n    if (!outFile) {\n        std::cerr << \"Error opening file for writing.\" << std::endl;\n        return 1;\n    }\n\n    outFile << \"Hello, World!\" << std::endl;\n    outFile << \"This is a C++ file I/O example.\" << std::endl;\n    outFile.close();\n\n    // Reading from a file\n    std::ifstream inFile(filename);\n    if (!inFile) {\n        std::cerr << \"Error opening file for reading.\" << std::endl;\n        return 1;\n    }\n\n    std::string line;\n    while (std::getline(inFile, line)) {\n        std::cout << line << std::endl;\n    }\n    inFile.close();\n\n    return 0;\n}\n",
+    "timestamp": "2024-08-24 18:01:34.152666841 +01:00",
+    "language": "C++",
+    "id": 87
+  },
+  {
+    "tag": "go, functions, goroutines",
+    "description": "Go code snippet demonstrating basic function definition and usage of goroutines for concurrent execution.",
+    "code": "package main\n\nimport (\n    \"fmt\"\n    \"time\"\n)\n\n// Function to print a message\nfunc printMessage(message string, delay time.Duration) {\n    time.Sleep(delay)\n    fmt.Println(message)\n}\n\nfunc main() {\n    // Using goroutines to run functions concurrently\n    go printMessage(\"Hello from goroutine 1\", 2*time.Second)\n    go printMessage(\"Hello from goroutine 2\", 1*time.Second)\n\n    // Wait for goroutines to finish\n    time.Sleep(3 * time.Second)\n    fmt.Println(\"Main function complete\")\n}\n",
+    "timestamp": "2024-08-24 18:01:49.951105973 +01:00",
+    "language": "Go",
+    "id": 88
+  },
+  {
+    "tag": "go, structs, methods",
+    "description": "Go code snippet demonstrating the use of structs and methods for organizing data and behavior.",
+    "code": "package main\n\nimport \"fmt\"\n\n// Defining a struct\ntype Person struct {\n    Name string\n    Age  int\n}\n\n// Method to display person details\nfunc (p Person) Display() {\n    fmt.Printf(\"Name: %s, Age: %d\\n\", p.Name, p.Age)\n}\n\nfunc main() {\n    person1 := Person{Name: \"Alice\", Age: 30}\n    person2 := Person{Name: \"Bob\", Age: 25}\n\n    // Calling method on structs\n    person1.Display()\n    person2.Display()\n}\n\n",
+    "timestamp": "2024-08-24 18:02:04.019367300 +01:00",
+    "language": "Go",
+    "id": 89
+  },
+  {
+    "tag": "go, channels, select",
+    "description": "Go code snippet demonstrating the use of channels and select statements for concurrent programming.",
+    "code": "package main\n\nimport (\n    \"fmt\"\n    \"time\"\n)\n\n// Function to send messages on a channel\nfunc sendMessage(ch chan string, message string, delay time.Duration) {\n    time.Sleep(delay)\n    ch <- message\n}\n\nfunc main() {\n    ch := make(chan string)\n\n    // Start goroutines to send messages\n    go sendMessage(ch, \"Message 1\", 2*time.Second)\n    go sendMessage(ch, \"Message 2\", 1*time.Second)\n\n    // Use select to handle messages from the channel\n    for i := 0; i < 2; i++ {\n        select {\n        case msg := <-ch:\n            fmt.Println(\"Received:\", msg)\n        case <-time.After(3 * time.Second):\n            fmt.Println(\"Timeout\")\n        }\n    }\n}\n",
+    "timestamp": "2024-08-24 18:02:17.836758884 +01:00",
+    "language": "Go",
+    "id": 90
+  },
+  {
+    "tag": "rust, structs, methods",
+    "description": "Rust code snippet demonstrating basic usage of structs and methods with encapsulation and data manipulation.",
+    "code": "// Define a struct with fields and methods\nstruct Rectangle {\n    width: u32,\n    height: u32,\n}\n\nimpl Rectangle {\n    // Constructor method to create a new Rectangle\n    fn new(width: u32, height: u32) -> Rectangle {\n        Rectangle { width, height }\n    }\n\n    // Method to calculate the area of the rectangle\n    fn area(&self) -> u32 {\n        self.width * self.height\n    }\n\n    // Method to calculate the perimeter of the rectangle\n    fn perimeter(&self) -> u32 {\n        2 * (self.width + self.height)\n    }\n\n    // Method to display the rectangle's details\n    fn display(&self) {\n        println!(\"Rectangle: {}x{}\", self.width, self.height);\n        println!(\"Area: {}\", self.area());\n        println!(\"Perimeter: {}\", self.perimeter());\n    }\n}\n\nfn main() {\n    // Create a new Rectangle instance\n    let rect = Rectangle::new(30, 50);\n\n    // Display the rectangle's details\n    rect.display();\n}\n\n",
+    "timestamp": "2024-08-24 18:04:53.878185963 +01:00",
+    "language": "Rust",
+    "id": 91
+  },
+  {
+    "tag": "rust, enums, pattern matching",
+    "description": "Rust code snippet demonstrating enums and pattern matching to handle different cases in a game.",
+    "code": "// Define an enum to represent different game states\nenum GameState {\n    Started,\n    Paused,\n    Ended,\n}\n\n// Function to handle game state\nfn handle_state(state: GameState) {\n    match state {\n        GameState::Started => println!(\"The game has started!\"),\n        GameState::Paused => println!(\"The game is paused.\"),\n        GameState::Ended => println!(\"The game has ended.\"),\n    }\n}\n\nfn main() {\n    let current_state = GameState::Started;\n\n    // Handle the current game state\n    handle_state(current_state);\n\n    let another_state = GameState::Paused;\n    handle_state(another_state);\n}\n",
+    "timestamp": "2024-08-24 18:05:11.264734566 +01:00",
+    "language": "Rust",
+    "id": 92
+  },
+  {
+    "tag": "rust, traits, generics",
+    "description": "Rust code snippet demonstrating traits and generics to implement a common interface for different types.",
+    "code": "// Define a trait with a method\ntrait Summarizable {\n    fn summarize(&self) -> String;\n}\n\n// Implement the trait for a struct\nstruct Article {\n    title: String,\n    content: String,\n}\n\nimpl Summarizable for Article {\n    fn summarize(&self) -> String {\n        format!(\"Title: {}\\nContent: {}\", self.title, self.content)\n    }\n}\n\n// Implement the trait for another struct\nstruct News {\n    headline: String,\n    body: String,\n}\n\nimpl Summarizable for News {\n    fn summarize(&self) -> String {\n        format!(\"Headline: {}\\nBody: {}\", self.headline, self.body)\n    }\n}\n\n// Generic function to print summary\nfn print_summary<T: Summarizable>(item: T) {\n    println!(\"{}\", item.summarize());\n}\n\nfn main() {\n    let article = Article {\n        title: String::from(\"Rust Traits and Generics\"),\n        content: String::from(\"In this article, we explore Rust traits and generics.\"),\n    };\n\n    let news = News {\n        headline: String::from(\"Breaking News\"),\n        body: String::from(\"Rust 2.0 has been released!\"),\n    };\n\n    print_summary(article);\n    print_summary(news);\n}\n",
+    "timestamp": "2024-08-24 18:05:31.915206653 +01:00",
+    "language": "Rust",
+    "id": 93
+  },
+  {
+    "tag": "rust, error handling, result, option",
+    "description": "Rust code snippet demonstrating error handling using  and  types for file operations.",
+    "code": "use std::fs::File;\nuse std::io::{self, Read};\nuse std::path::Path;\n\n// Function to read a file and return its content or an error\nfn read_file_content<P: AsRef<Path>>(path: P) -> Result<String, io::Error> {\n    let mut file = File::open(path)?;\n    let mut content = String::new();\n    file.read_to_string(&mut content)?;\n    Ok(content)\n}\n\n// Function to handle optional values\nfn handle_option(value: Option<&str>) {\n    match value {\n        Some(v) => println!(\"Value: {}\", v),\n        None => println!(\"No value provided.\"),\n    }\n}\n\nfn main() {\n    // Read file content and handle errors\n    match read_file_content(\"example.txt\") {\n        Ok(content) => println!(\"File content:\\n{}\", content),\n        Err(e) => eprintln!(\"Error reading file: {}\", e),\n    }\n\n    // Handle optional values\n    let some_value = Some(\"Hello, Rust!\");\n    let no_value: Option<&str> = None;\n\n    handle_option(some_value);\n    handle_option(no_value);\n}\n",
+    "timestamp": "2024-08-24 18:05:44.530198893 +01:00",
+    "language": "Rust",
+    "id": 94
+  },
+  {
+    "tag": "rust, concurrency, threads",
+    "description": "Rust code snippet demonstrating basic concurrency with threads and shared state using  and .",
+    "code": "use std::sync::{Arc, Mutex};\nuse std::thread;\n\n// Function to increment a counter\nfn increment_counter(counter: Arc<Mutex<u32>>) {\n    let mut num = counter.lock().unwrap();\n    *num += 1;\n}\n\nfn main() {\n    // Create a shared counter\n    let counter = Arc::new(Mutex::new(0));\n\n    let mut handles = vec![];\n\n    // Spawn multiple threads\n    for _ in 0..10 {\n        let counter_clone = Arc::clone(&counter);\n        let handle = thread::spawn(move || {\n            for _ in 0..100 {\n                increment_counter(counter_clone);\n            }\n        });\n        handles.push(handle);\n    }\n\n    // Wait for all threads to complete\n    for handle in handles {\n        handle.join().unwrap();\n    }\n\n    // Print the final counter value\n    println!(\"Final counter value: {}\", *counter.lock().unwrap());\n}\n",
+    "timestamp": "2024-08-24 18:06:01.692494797 +01:00",
+    "language": "Rust",
+    "id": 95
+  },
+  {
+    "tag": "rust, async, await",
+    "description": "Rust code snippet demonstrating asynchronous programming with  and  for non-blocking I/O operations.",
+    "code": "use std::time::Duration;\nuse tokio; // Add `tokio` as a dependency in `Cargo.toml`\n\n// Asynchronous function to simulate a delay\nasync fn async_task(name: &'static str, delay_secs: u64) {\n    println!(\"Task {} started\", name);\n    tokio::time::sleep(Duration::from_secs(delay_secs)).await;\n    println!(\"Task {} completed after {} seconds\", name, delay_secs);\n}\n\n#[tokio::main]\nasync fn main() {\n    // Start multiple asynchronous tasks\n    let task1 = async_task(\"A\", 2);\n    let task2 = async_task(\"B\", 1);\n    let task3 = async_task(\"C\", 3);\n\n    // Await the completion of tasks\n    let _ = tokio::try_join!(task1, task2, task3);\n\n    println!(\"All tasks completed.\");\n}\n",
+    "timestamp": "2024-08-24 18:06:12.637615235 +01:00",
+    "language": "Rust",
+    "id": 96
+  },
+  {
+    "tag": "rust, ownership, borrowing",
+    "description": "Rust code snippet demonstrating ownership, borrowing, and the rules of references to manage memory safely.",
+    "code": "// Function that takes ownership of a vector\nfn take_ownership(v: Vec<i32>) {\n    println!(\"Vector inside take_ownership: {:?}\", v);\n}\n\n// Function that borrows a vector immutably\nfn borrow_immutably(v: &Vec<i32>) {\n    println!(\"Vector borrowed immutably: {:?}\", v);\n}\n\n// Function that borrows a vector mutably\nfn borrow_mutably(v: &mut Vec<i32>) {\n    v.push(4);\n    println!(\"Vector borrowed mutably: {:?}\", v);\n}\n\nfn main() {\n    // Create a vector and print it\n    let mut vec = vec![1, 2, 3];\n    println!(\"Original vector: {:?}\", vec);\n\n    // Borrow the vector immutably\n    borrow_immutably(&vec);\n\n    // Borrow the vector mutably and modify it\n    borrow_mutably(&mut vec);\n    println!(\"Modified vector: {:?}\", vec);\n\n    // Transfer ownership of the vector\n    take_ownership(vec);\n\n    // Uncommenting the following line will cause a compile-time error\n    // println!(\"Trying to use vector after ownership transfer: {:?}\", vec);\n}\n",
+    "timestamp": "2024-08-24 18:07:26.985989506 +01:00",
+    "language": "Rust",
+    "id": 97
+  },
+  {
+    "tag": "rust, macros, custom derive",
+    "description": "Rust code snippet demonstrating the use of macros and custom derive attributes for code generation.",
+    "code": "// Define a simple macro that prints a message\nmacro_rules! print_message {\n    ($message:expr) => {\n        println!(\"Message: {}\", $message);\n    };\n}\n\n// Define a custom derive macro to automatically implement the `ToString` trait\nuse std::fmt;\n\n#[derive(Debug)]\nstruct Person {\n    name: String,\n    age: u32,\n}\n\n// Implement ToString trait for Person using a custom derive macro\nimpl fmt::Display for Person {\n    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {\n        write!(f, \"{} is {} years old\", self.name, self.age)\n    }\n}\n\nfn main() {\n    // Use the print_message macro\n    print_message!(\"Hello, macros!\");\n\n    // Create an instance of Person\n    let person = Person {\n        name: String::from(\"Alice\"),\n        age: 30,\n    };\n\n    // Print the person using the custom Display implementation\n    println!(\"Person details: {}\", person);\n\n    // Print using the Debug implementation\n    println!(\"Debug details: {:?}\", person);\n}\n",
+    "timestamp": "2024-08-24 18:07:40.254591886 +01:00",
+    "language": "Rust",
+    "id": 98
+  },
+  {
+    "tag": "rust, ownership, borrowing",
+    "description": "Demonstrate rust's ownership and borrowing principles, including immutable and mutable references, and how they affect memory management.",
+    "code": "// Function that takes ownership of a vector\nfn take_ownership(v: Vec<i32>) {\n    println!(\"Vector inside take_ownership: {:?}\", v);\n}\n\n// Function that borrows a vector immutably\nfn borrow_immutably(v: &Vec<i32>) {\n    println!(\"Vector borrowed immutably: {:?}\", v);\n}\n\n// Function that borrows a vector mutably\nfn borrow_mutably(v: &mut Vec<i32>) {\n    v.push(4);\n    println!(\"Vector borrowed mutably: {:?}\", v);\n}\n\nfn main() {\n    // Create a vector and print it\n    let mut vec = vec![1, 2, 3];\n    println!(\"Original vector: {:?}\", vec);\n\n    // Borrow the vector immutably\n    borrow_immutably(&vec);\n\n    // Borrow the vector mutably and modify it\n    borrow_mutably(&mut vec);\n    println!(\"Modified vector: {:?}\", vec);\n\n    // Transfer ownership of the vector\n    take_ownership(vec);\n\n    // Uncommenting the following line will cause a compile-time error\n    // println!(\"Trying to use vector after ownership transfer: {:?}\", vec);\n}\n",
+    "timestamp": "2024-08-24 18:21:19.492380839 +01:00",
+    "language": "Rust",
+    "id": 99
+  }
+]
