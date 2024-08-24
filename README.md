@@ -1,5 +1,6 @@
 # Codevault: Your Personal Code Snippet Manager
 
+![Codevault is a simple and powerful CLI tool designed to manage your code snippets, helping you stay organized and productive. Whether you're a seasoned developer or just starting out, Codevault streamlines your code snippet management by offering features such as:](https://github.com/Quiflern/Codevault/blob/main/docs/codevault.png?raw=true)
 Codevault is a simple and powerful CLI tool designed to manage your code snippets, helping you stay organized and productive. Whether you're a seasoned developer or just starting out, Codevault streamlines your code snippet management by offering features such as:
 
 - **Capture and Store Snippets:** Capture code from the terminal, saving it alongside descriptions, tags, and the language for syntax highlighting by using **`capture`** command.
@@ -88,7 +89,7 @@ The **`capture`** command save your code and add it to snippet collection.
     target/debug/codevault capture --description "This is short description for the code snippet" --language "JavaScript" --tag "sample javascript code"
 
 **Demo:**
-DEMO VIDEO
+[capture-demo.webm](https://github.com/user-attachments/assets/881f1697-7117-4526-beae-b02c30b98959)
 
 ### Copy Command:
 
@@ -213,9 +214,7 @@ The **`export`** command exports saved snippets in language-specific format from
 
 - **Path examples:**
   If the path is not specified it export to **`snippet_exports`** directory, which will created on the root directory (_i.e location where the program is opened)_.
-  `
-	    target/debug/codevault export --language Rust --path "codes/rust"
-	`
+  `    target/debug/codevault export --language Rust --path "codes/rust"`
   **Demo :**
   DEMO VIDEO
 
