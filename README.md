@@ -89,7 +89,7 @@ The **`capture`** command save your code and add it to snippet collection.
 **Example:**
 **To save new snippet execute:**
 
-    target/debug/codevault capture --description "This is short description for the code snippet" --language "JavaScript" --tag "sample javascript code"
+    target/debug/codevault capture --description "Demonstrate rust's ownership and borrowing principles, including immutable and mutable references, and how they affect memory management."  --tag "rust, ownership, borrowing" --language "Rust"
 
 **Demo:**
 
