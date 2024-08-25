@@ -139,8 +139,7 @@ The **`delete`** command remove snippets from your snippet collection.
 **Example:**
 **To delete the snippet with ID "1", execute:**
 
-    target/debug/codevault delete --id 1
-
+    target/debug/codevault delete --id 100
 **Demo:**
 
 [delete-command -demo.webm](https://github.com/user-attachments/assets/5f67010c-4b9b-457d-8c17-03e68c5a3899)
