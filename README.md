@@ -161,21 +161,19 @@ The `edit` command allows you edit existing snippets.
 
 1. **Edit snippet with tags:**
    ```
-   target/debug/codevault edit -t data
+   target/debug/codevault edit -t Rust
    ```
-   **Demo:**
+   	**Demo:**
 
-[edit-command-with-id.webm](https://github.com/user-attachments/assets/03e653cb-e4a5-4e99-9129-2e5fc93a8157)
-
+	[edit-command-tags-demo.webm](https://github.com/user-attachments/assets/9b61147e-fbe4-45bb-87ba-ad744dc03025)
 2. **Edit snippet with ID 100:**
    ```
    target/debug/codevault edit -i 100
    ```
-   **Demo:**
 
-[edit-command-with-id.webm](https://github.com/user-attachments/assets/03e653cb-e4a5-4e99-9129-2e5fc93a8157)
+	**Demo:**
 
-
+	[edit-command-with-id.webm](https://github.com/user-attachments/assets/03e653cb-e4a5-4e99-9129-2e5fc93a8157)
 
 ### Export Command:
 
