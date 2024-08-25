@@ -19,18 +19,20 @@ Codevault is a simple and powerful CLI tool designed to manage your code snippet
 - **Boost Productivity:** Minimize distractions and maximize coding time by having all your snippets readily accessible in an organized manner.
 
 #### File Tree
-.
-├── Cargo.lock
-├── Cargo.toml
-├── data
-│   └── codevault.json
-├── README.md
-└── src
-    ├── main.rs
-    └── models.rs
+
+    .
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── data
+    │   └── codevault.json
+    ├── README.md
+    └── src
+        ├── main.rs
+        └── models.rs
 
 **`codevault.json`** contains all the snippets, which make easier to copy and backup to use on multiple pc.
 the repo contains codevault.json with 100 snippets to test the application, you are can delete it and starting saving yours. code snippets. 
+
 #### Supported Languages for Syntax Highlighting:
 
 | Plain Text         | ASP                          | HTML (ASP)                | ActionScript                     | AppleScript                 |
