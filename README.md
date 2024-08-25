@@ -193,7 +193,7 @@ The **`export`** command exports saved snippets in language-specific format from
 
 **Examples:**
 
-- **Exporting all the snippets of `export_snippets` directory :**
+- **Exporting all the snippets to default `export_snippets` directory :**
   ```
   target/debug/codevault export
   ```
