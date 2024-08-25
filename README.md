@@ -223,30 +223,32 @@ The **`export`** command exports saved snippets in language-specific format from
   	[export-language-command-demo.webm](https://github.com/user-attachments/assets/d2c8635f-3cd9-4544-80f7-89d58b608b42)
 - **Advanced Exporting Options:**
 
-  - **Exporting of snippets matches tags & languages to the specified path;**
+  - **Multiple tags;**
     ```
-    target/debug/codevault export --tag data --language Rust --path "export/html/"
+    target/debug/codevault export --tag recursion,function
     ```
-  - **Multiple tags; **
-    ```
-    target/debug/codevault export --tag data,html
-    ```
+    **Demo:**
+
+	[export-multiple-tags-command-demo.webm](https://github.com/user-attachments/assets/96622348-8f99-48d1-960f-0e21f0d892e9)
   - **Multiple Languages;**
     ```
     target/debug/codevault export --language Rust,C++
     ```
+	  **Demo:**
+	  
+	[export-multiple-language-command-demo.webm](https://github.com/user-attachments/assets/6016391a-8827-4de0-a602-34b87ef9a69c)
   - **Mutiple tags & Languages;**
     ```
-    target/debug/codevault export --language Rust,C++
+    target/debug/codevault export --tag rust,recursion --language rust,go --path "multiexport"
     ```
-
+	  **Demo:**
+	  
+	  [export-multi-tags-language-command-demo.webm](https://github.com/user-attachments/assets/d7f8be44-9953-47f3-b315-6a662a18a7e4)
 - **Path examples:**
   If the path is not specified it export to **`snippet_exports`** directory, which will created on the root directory (_i.e location where the program is opened)_.
   `    target/debug/codevault export --language Rust --path "codes/rust"`
 
-**Demo :**
-
-[export-command-demo.webm](https://github.com/user-attachments/assets/c06c35f8-58aa-4bce-b86a-510cb03e9ab7)
+	**Demo :** **Refer to above examples on how to use path.**
 
 ### View Command:
 
