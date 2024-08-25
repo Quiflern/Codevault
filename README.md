@@ -108,9 +108,16 @@ The **`copy`** command displays the code stored in snippet, and shows only the c
   _eg:_ `-i 1 ` | `--id 1`.
 
 **Examples:**
-**To view the code of ID "1", execute:**
 
-    target/debug/codevault copy --id 1
+ - **To view the code of ID "20", execute:**
+	
+
+	    target/debug/codevault copy --id 20
+
+ - **To view the code of ID "25", execute:**
+	
+
+	    target/debug/codevault copy --id 20
 
 **Demo:**
 
