@@ -138,7 +138,7 @@ pub enum Commands {
             long = "path",
             help = "Specify the directory where the snippet should be exported"
         )]
-        path: Option<PathBuf>, // This is now part of the `Export` command
+        path: Option<PathBuf>,
     },
     #[command(about = "List of all programming languages supported for syntax highlighting")]
     Languages,
@@ -614,10 +614,17 @@ fn edit_snippet(
             }
         }
         (None, Some(snippet_tag)) => {
-            let matching_snippets: Vec<Snippet> =
-                snippets.iter().cloned().filter(|s| s.tag == *snippet_tag).collect();
+            let matching_snippets: Vec<&Snippet> = snippets
+                .iter()
+                .filter(|s| s.tag.to_lowercase().contains(&snippet_tag.to_lowercase()))
+                .collect();
 
-            if matching_snippets.len() > 1 {
+            if matching_snippets.is_empty() {
+                return Err(format!(
+                    "Tag '\x1b[1;33m{}\x1b[0m' doesn't match any snippets. Try a different tag.",
+                    snippet_tag
+                ));
+            } else if matching_snippets.len() > 1 {
                 println!("\n\x1b[38;5;201;1mEdit snippet:\x1b[0m\n");
                 println!("\x1b[1;36mMultiple matching tags found, choose an \x1b[1;33mID\x1b[1;36m to edit from list:\x1b[0m\n");
                 for snippet in matching_snippets.iter() {
@@ -643,13 +650,8 @@ fn edit_snippet(
                         chosen_id
                     ));
                 }
-            } else if let Some(index) = snippets.iter().position(|s| s.tag == *snippet_tag) {
-                snippets.remove(index)
             } else {
-                return Err(format!(
-                    "Tag '\x1b[1;33m{}\x1b[0m' doesn't match any snippets. Try a different tag.",
-                    snippet_tag
-                ));
+                matching_snippets[0].clone()
             }
         }
         (None, None) => {
@@ -751,6 +753,7 @@ fn edit_snippet(
 
     Ok(())
 }
+
 
 fn save_snippets_for_edit(snippets: Vec<Snippet>, file_path: &str) -> Result<(), String> {
     let mut file = OpenOptions::new()
@@ -900,7 +903,6 @@ fn export_snippets(
         } else if let Some(tag) = tag {
             let tags: Vec<&str> = tag.split(',').map(|s| s.trim()).collect();
             if let Some(lang) = language {
-                // Both tag and language are provided, but no match
                 let langs: Vec<&str> = lang.split(',').map(|s| s.trim()).collect();
                 let matching_html_count = snippets
                     .iter()
@@ -919,14 +921,12 @@ fn export_snippets(
                     langs.join(", ")
                 ));
             } else {
-                // Only tag is provided, but no match
                 return Err(format!(
                     " snippet with '{}' tags does not exist in the collection",
                     tags.join(", ")
                 ));
             }
         } else if let Some(lang) = language {
-            // Only language is provided, but no match
             let langs: Vec<&str> = lang.split(',').map(|s| s.trim()).collect();
             return Err(format!(
                 " snippet with '{}' language does not exist in the collection",
@@ -935,8 +935,6 @@ fn export_snippets(
         }
     }
 
-    // Show a warning and confirmation prompt before exporting
-    // Show prompt only if multiple snippets are matched (more than one)
     if filtered_snippets.len() > 1 {
         println!("\n\x1b[38;5;201;1mExport Snippets:\x1b[0m\n");
         print!("\x1b[1m\x1b[36mExporting {} snippets in language-specific formats. Are you sure you want to continue? (\x1b[33my\x1b[36m/\x1b[33mN\x1b[36m): \x1b[0m", filtered_snippets.len());
@@ -950,7 +948,6 @@ fn export_snippets(
         }
     }
 
-    // Determine the export directory based on the --path flag or the default
     let export_dir = match export_path {
         Some(path) => path.clone(),
         None => {
@@ -959,14 +956,13 @@ fn export_snippets(
         }
     };
 
-    // Create the export directory if it doesn't exist
+    
     std::fs::create_dir_all(&export_dir)
         .map_err(|err| format!("\x1b[31merror:\x1b[0m creating directory: {}\x1b[0m", err))?;
 
     for snippet in filtered_snippets {
         let _lowercase_lang = snippet.language.as_ref().map(|lang| lang.to_lowercase());
 
-        // Map language to file extension
         let extension = match snippet.language.as_deref() {
             Some("AppleScript") => "applescript",
             Some("ASP") => "asp",
@@ -1030,18 +1026,18 @@ fn export_snippets(
             Some("Textile") => "textile",
             Some("XML") => "xml",
             Some("YAML") => "yaml",
-            _ => "txt", // Default to .txt if no language specified
+            _ => "txt", 
         };
 
         let filename = format!("{}/{}.{}", export_dir.display(), snippet.id, extension);
 
-        // Check if the file already exists
+
         if std::fs::metadata(&filename).is_ok() {
             println!(
                 "\n\x1b[1m\x1b[93mThe file has been already exported and is located at '{}'.\x1b[0m\x1b[0m",
                 filename
             );
-            continue; // Skip to the next snippet
+            continue;
         }
 
         let file = File::create(&filename).map_err(|err| {
