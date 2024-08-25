@@ -297,6 +297,20 @@ fn main() -> Result<(), String> {
     Ok(())
 }
 
+fn generate_unique_id(file_path: &str) -> u32 {
+    let mut max_id = 0;
+    if let Ok(mut file) = File::open(file_path) {
+        let snippets: Vec<Snippet> = match serde_json::from_reader(&mut file) {
+            Ok(s) => s,
+            Err(_err) => {
+                return 1;
+            }
+        };
+        max_id = snippets.iter().map(|s| s.id).max().unwrap_or(0);
+    }
+    max_id + 1
+}
+
 fn format_with_border(content: &str, width: usize) -> String {
     let stripped_content = strip_ansi_codes(content);
     let padding = width.saturating_sub(stripped_content.chars().count());
@@ -322,6 +336,148 @@ fn print_formatted_code(code: &str, language: &Option<String>, width: usize) {
         let formatted_line = format!("  {}", line);
         println!("{}", format_with_border(&formatted_line, width));
     }
+}
+
+fn highlight_code_snippets(code: &str, language: &str) -> String {
+    let ps = SyntaxSet::load_defaults_newlines();
+    let ts = ThemeSet::load_defaults();
+
+    let syntax = ps
+        .find_syntax_by_token(language)
+        .or_else(|| ps.find_syntax_by_name(language))
+        .unwrap_or(ps.find_syntax_plain_text());
+
+    let mut output = String::new();
+    for line in LinesWithEndings::from(code) {
+        let mut highlighter = HighlightLines::new(syntax, &ts.themes["base16-ocean.dark"]);
+        let ranges: Vec<(Style, &str)> = highlighter.highlight_line(line, &ps).unwrap();
+        let escaped_line = format_terminal_snippets(&ranges);
+        output.push_str(&escaped_line);
+    }
+
+    output
+}
+
+fn format_terminal_snippets(v: &[(Style, &str)]) -> String {
+    let mut s = String::new();
+    for &(ref style, text) in v.iter() {
+        s.push_str(&format!(
+            "\x1b[38;2;{};{};{}m{}",
+            style.foreground.r, style.foreground.g, style.foreground.b, text
+        ));
+    }
+    s.push_str("\x1b[0m");
+    s
+}
+
+fn print_snippet(snippet: &Snippet) {
+    let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
+    let created_line = format!(
+        "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
+        snippet.timestamp
+    );
+    let tag_line = format!(
+        "  \x1b[33;1mSnippet's Tag:\x1b[0m \x1b[35;1m{}\x1b[0m",
+        snippet.tag
+    );
+    let description_line = if let Some(desc) = &snippet.description {
+        format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
+    } else {
+        String::new()
+    };
+
+    let all_lines = vec![
+        strip_ansi_codes(&id_line),
+        strip_ansi_codes(&tag_line),
+        strip_ansi_codes(&created_line),
+        strip_ansi_codes(&description_line),
+    ]
+    .into_iter()
+    .chain(snippet.code.lines().map(|line| strip_ansi_codes(line)))
+    .collect::<Vec<_>>();
+
+    let max_line_length = all_lines
+        .iter()
+        .map(|line| line.chars().count())
+        .max()
+        .unwrap_or(0);
+
+    let adjusted_width = max_line_length + 4;
+
+    println!(
+        "\x1b[34m{}\x1b[0m",
+        "\x1b[34m╔\x1b[0m".to_owned()
+            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
+            + "\x1b[34m╗\x1b[0m"
+    );
+    println!("{}", format_with_border(&id_line, adjusted_width));
+    println!("{}", format_with_border(&tag_line, adjusted_width));
+    println!("{}", format_with_border(&created_line, adjusted_width));
+    if !description_line.is_empty() {
+        println!("{}", format_with_border(&description_line, adjusted_width));
+    }
+    println!(
+        "\x1b[34m{}\x1b[0m",
+        "\x1b[34m╟\x1b[0m".to_owned()
+            + &"\x1b[34m─\x1b[0m".repeat(adjusted_width)
+            + "\x1b[34m╢\x1b[0m"
+    );
+    print_formatted_code(&snippet.code, &snippet.language, adjusted_width);
+    println!(
+        "\x1b[34m{}\x1b[0m",
+        "\x1b[34m╚\x1b[0m".to_owned()
+            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
+            + "\x1b[34m╝\x1b[0m\n"
+    );
+}
+
+fn print_snippet_summary(snippet: &Snippet) {
+    let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
+    let tag_line = format!("  \x1b[33;1mTag:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.tag);
+    let created_line = format!(
+        "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
+        snippet.timestamp
+    );
+    let description_line = if let Some(desc) = &snippet.description {
+        format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
+    } else {
+        String::new()
+    };
+    let all_lines = vec![
+        strip_ansi_codes(&id_line),
+        strip_ansi_codes(&tag_line),
+        strip_ansi_codes(&created_line),
+        strip_ansi_codes(&description_line),
+    ]
+    .into_iter()
+    .collect::<Vec<_>>();
+
+    let max_line_length = all_lines
+        .iter()
+        .map(|line| line.chars().count())
+        .max()
+        .unwrap_or(0);
+
+    let adjusted_width = max_line_length + 4;
+
+    println!(
+        "\x1b[34m{}\x1b[0m",
+        "\x1b[34m╔\x1b[0m".to_owned()
+            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
+            + "\x1b[34m╗\x1b[0m"
+    );
+    println!("{}", format_with_border(&id_line, adjusted_width));
+    println!("{}", format_with_border(&tag_line, adjusted_width));
+    println!("{}", format_with_border(&created_line, adjusted_width));
+    if !description_line.is_empty() {
+        println!("{}", format_with_border(&description_line, adjusted_width));
+    }
+    println!(
+        "\x1b[34m{}\x1b[0m",
+        "\x1b[34m╚\x1b[0m".to_owned()
+            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
+            + "\x1b[34m╝\x1b[0m\n"
+    );
 }
 
 fn capture_snippet() -> String {
@@ -368,19 +524,6 @@ fn load_snippets(file_path: &str) -> Result<Vec<Snippet>, String> {
     let snippets: Vec<Snippet> = serde_json::from_reader(file)
         .map_err(|err| format!("\x1b[1;33m reading snippets{}\x1b[0m", err))?;
     Ok(snippets)
-}
-
-fn save_snippets_for_edit(snippets: Vec<Snippet>, file_path: &str) -> Result<(), String> {
-    let mut file = OpenOptions::new()
-        .write(true)
-        .truncate(true)
-        .create(true)
-        .open(file_path)
-        .map_err(|err| format!("\x1b[1;33m opening file{}\x1b[0m", err))?;
-
-    serde_json::to_writer_pretty(&mut file, &snippets)
-        .map_err(|err| format!(" serializing snippets: '\x1b[1;33m{}\x1b[0m'", err))?;
-    Ok(())
 }
 
 fn view_snippets(
@@ -448,20 +591,6 @@ fn view_snippets(
     }
 
     Ok(filtered_snippets)
-}
-
-fn generate_unique_id(file_path: &str) -> u32 {
-    let mut max_id = 0;
-    if let Ok(mut file) = File::open(file_path) {
-        let snippets: Vec<Snippet> = match serde_json::from_reader(&mut file) {
-            Ok(s) => s,
-            Err(_err) => {
-                return 1;
-            }
-        };
-        max_id = snippets.iter().map(|s| s.id).max().unwrap_or(0);
-    }
-    max_id + 1
 }
 
 fn edit_snippet(
@@ -623,146 +752,17 @@ fn edit_snippet(
     Ok(())
 }
 
-fn highlight_code_snippets(code: &str, language: &str) -> String {
-    let ps = SyntaxSet::load_defaults_newlines();
-    let ts = ThemeSet::load_defaults();
+fn save_snippets_for_edit(snippets: Vec<Snippet>, file_path: &str) -> Result<(), String> {
+    let mut file = OpenOptions::new()
+        .write(true)
+        .truncate(true)
+        .create(true)
+        .open(file_path)
+        .map_err(|err| format!("\x1b[1;33m opening file{}\x1b[0m", err))?;
 
-    let syntax = ps
-        .find_syntax_by_token(language)
-        .or_else(|| ps.find_syntax_by_name(language))
-        .unwrap_or(ps.find_syntax_plain_text());
-
-    let mut output = String::new();
-    for line in LinesWithEndings::from(code) {
-        let mut highlighter = HighlightLines::new(syntax, &ts.themes["base16-ocean.dark"]);
-        let ranges: Vec<(Style, &str)> = highlighter.highlight_line(line, &ps).unwrap();
-        let escaped_line = format_terminal_snippets(&ranges);
-        output.push_str(&escaped_line);
-    }
-
-    output
-}
-
-fn format_terminal_snippets(v: &[(Style, &str)]) -> String {
-    let mut s = String::new();
-    for &(ref style, text) in v.iter() {
-        s.push_str(&format!(
-            "\x1b[38;2;{};{};{}m{}",
-            style.foreground.r, style.foreground.g, style.foreground.b, text
-        ));
-    }
-    s.push_str("\x1b[0m");
-    s
-}
-
-fn print_snippet(snippet: &Snippet) {
-    let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
-    let created_line = format!(
-        "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
-        snippet.timestamp
-    );
-    let tag_line = format!(
-        "  \x1b[33;1mSnippet's Tag:\x1b[0m \x1b[35;1m{}\x1b[0m",
-        snippet.tag
-    );
-    let description_line = if let Some(desc) = &snippet.description {
-        format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
-    } else {
-        String::new()
-    };
-
-    let all_lines = vec![
-        strip_ansi_codes(&id_line),
-        strip_ansi_codes(&tag_line),
-        strip_ansi_codes(&created_line),
-        strip_ansi_codes(&description_line),
-    ]
-    .into_iter()
-    .chain(snippet.code.lines().map(|line| strip_ansi_codes(line)))
-    .collect::<Vec<_>>();
-
-    let max_line_length = all_lines
-        .iter()
-        .map(|line| line.chars().count())
-        .max()
-        .unwrap_or(0);
-
-    let adjusted_width = max_line_length + 4;
-
-    println!(
-        "\x1b[34m{}\x1b[0m",
-        "\x1b[34m╔\x1b[0m".to_owned()
-            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-            + "\x1b[34m╗\x1b[0m"
-    );
-    println!("{}", format_with_border(&id_line, adjusted_width));
-    println!("{}", format_with_border(&tag_line, adjusted_width));
-    println!("{}", format_with_border(&created_line, adjusted_width));
-    if !description_line.is_empty() {
-        println!("{}", format_with_border(&description_line, adjusted_width));
-    }
-    println!(
-        "\x1b[34m{}\x1b[0m",
-        "\x1b[34m╟\x1b[0m".to_owned()
-            + &"\x1b[34m─\x1b[0m".repeat(adjusted_width)
-            + "\x1b[34m╢\x1b[0m"
-    );
-    print_formatted_code(&snippet.code, &snippet.language, adjusted_width);
-    println!(
-        "\x1b[34m{}\x1b[0m",
-        "\x1b[34m╚\x1b[0m".to_owned()
-            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-            + "\x1b[34m╝\x1b[0m\n"
-    );
-}
-
-fn print_snippet_summary(snippet: &Snippet) {
-    let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
-    let tag_line = format!("  \x1b[33;1mTag:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.tag);
-    let created_line = format!(
-        "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
-        snippet.timestamp
-    );
-    let description_line = if let Some(desc) = &snippet.description {
-        format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
-    } else {
-        String::new()
-    };
-    let all_lines = vec![
-        strip_ansi_codes(&id_line),
-        strip_ansi_codes(&tag_line),
-        strip_ansi_codes(&created_line),
-        strip_ansi_codes(&description_line),
-    ]
-    .into_iter()
-    .collect::<Vec<_>>();
-
-    let max_line_length = all_lines
-        .iter()
-        .map(|line| line.chars().count())
-        .max()
-        .unwrap_or(0);
-
-    let adjusted_width = max_line_length + 4;
-
-    println!(
-        "\x1b[34m{}\x1b[0m",
-        "\x1b[34m╔\x1b[0m".to_owned()
-            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-            + "\x1b[34m╗\x1b[0m"
-    );
-    println!("{}", format_with_border(&id_line, adjusted_width));
-    println!("{}", format_with_border(&tag_line, adjusted_width));
-    println!("{}", format_with_border(&created_line, adjusted_width));
-    if !description_line.is_empty() {
-        println!("{}", format_with_border(&description_line, adjusted_width));
-    }
-    println!(
-        "\x1b[34m{}\x1b[0m",
-        "\x1b[34m╚\x1b[0m".to_owned()
-            + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-            + "\x1b[34m╝\x1b[0m\n"
-    );
+    serde_json::to_writer_pretty(&mut file, &snippets)
+        .map_err(|err| format!(" serializing snippets: '\x1b[1;33m{}\x1b[0m'", err))?;
+    Ok(())
 }
 
 fn copy_code(file_path: &str, id: &Option<u32>) -> Result<Snippet, String> {
