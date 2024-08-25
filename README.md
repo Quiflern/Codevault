@@ -198,25 +198,29 @@ The **`export`** command exports saved snippets in language-specific format from
   target/debug/codevault export
   ```
   **Demo:**
-	  [export-allfiles-command-demo.webm](https://github.com/user-attachments/assets/64ceeb4b-23ed-4b1c-a95b-db4aa7894c36)
+
+  	[export-allfiles-command-demo.webm](https://github.com/user-attachments/assets/64ceeb4b-23ed-4b1c-a95b-db4aa7894c36)
 - **Exporting an snippet using id ;**
   ```
   target/debug/codevault export --id 99
   ```
     **Demo:**
-	    [export-id-command-demo.webm](https://github.com/user-attachments/assets/dfdc6379-789e-49a6-b959-b57ab81d945d)
+
+  	[export-id-command-demo.webm](https://github.com/user-attachments/assets/dfdc6379-789e-49a6-b959-b57ab81d945d)
 - **Export an snippet using tags only ;**
   ```
   target/debug/codevault export --tags Rust
   ```
     **Demo:**
+
 	[export-tag-command-demo.webm](https://github.com/user-attachments/assets/ca352527-76d2-4c33-a294-938ec582dea3)
 - **Export an snippet using languages only ;**
   ```
   target/debug/codevault export --language Erlang
   ```
     **Demo:**
-	    [export-language-command-demo.webm](https://github.com/user-attachments/assets/d2c8635f-3cd9-4544-80f7-89d58b608b42)
+
+  	[export-language-command-demo.webm](https://github.com/user-attachments/assets/d2c8635f-3cd9-4544-80f7-89d58b608b42)
 - **Advanced Exporting Options:**
 
   - **Exporting of snippets matches tags & languages to the specified path;**
