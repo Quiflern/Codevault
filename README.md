@@ -1,6 +1,7 @@
 # Codevault: Your Personal Code Snippet Manager
 
-![Codevault is a simple and powerful CLI tool designed to manage your code snippets, helping you stay organized and productive. Whether you're a seasoned developer or just starting out, Codevault streamlines your code snippet management by offering features such as:](https://github.com/Quiflern/Codevault/blob/main/docs/codevault.png?raw=true)
+![codevault](https://github.com/user-attachments/assets/ea09c6ed-8929-42ca-af44-82f9b2a34b2c)
+
 Codevault is a simple and powerful CLI tool designed to manage your code snippets, helping you stay organized and productive. Whether you're a seasoned developer or just starting out, Codevault streamlines your code snippet management by offering features such as:
 
 - **Capture and Store Snippets:** Capture code from the terminal, saving it alongside descriptions, tags, and the language for syntax highlighting by using **`capture`** command.
@@ -41,7 +42,8 @@ Codevault is a simple and powerful CLI tool designed to manage your code snippet
 **1. Install Rust:**
 **Prerequisites:**
 You'll need Rust and Cargo installed on your system. - Check Rust's presence: `rustc --version`
-![enter image description here](https://github.com/Quiflern/Codevault/blob/main/docs/rust-version.png?raw=true)
+
+![rust-version](https://github.com/user-attachments/assets/88b0700c-1e67-4dcb-a4e4-b7d7c1d85d4a)
 
 **Install Rust:**
 Install using the official installer: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
