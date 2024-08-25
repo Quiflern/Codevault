@@ -311,32 +311,32 @@ fn generate_unique_id(file_path: &str) -> u32 {
     max_id + 1
 }
 
-// fn format_with_border(content: &str, width: usize) -> String {
-//     let stripped_content = strip_ansi_codes(content);
-//     let padding = width.saturating_sub(stripped_content.chars().count());
-//     return format!(
-//         "\x1b[34m║\x1b[0m{}{}\x1b[34m║\x1b[0m",
-//         content,
-//         " ".repeat(padding)
-//     );
-// }
+fn format_with_border(content: &str, width: usize) -> String {
+    let stripped_content = strip_ansi_codes(content);
+    let padding = width.saturating_sub(stripped_content.chars().count());
+    return format!(
+        "\x1b[34m║\x1b[0m{}{}\x1b[34m║\x1b[0m",
+        content,
+        " ".repeat(padding)
+    );
+}
 
-// fn print_formatted_code(code: &str, language: &Option<String>, width: usize) {
-//     let highlighted_code = if let Some(lang) = language {
-//         highlight_code_snippets(code, lang)
-//     } else {
-//         code.to_string()
-//     };
+fn print_formatted_code(code: &str, language: &Option<String>, width: usize) {
+    let highlighted_code = if let Some(lang) = language {
+        highlight_code_snippets(code, lang)
+    } else {
+        code.to_string()
+    };
 
-//     println!(
-//         "{}",
-//         format_with_border(&format!("\x1b[33;1m  Code:\x1b[0m"), width)
-//     );
-//     for line in highlighted_code.lines() {
-//         let formatted_line = format!("  {}", line);
-//         println!("{}", format_with_border(&formatted_line, width));
-//     }
-// }
+    println!(
+        "{}",
+        format_with_border(&format!("\x1b[33;1m  Code:\x1b[0m"), width)
+    );
+    for line in highlighted_code.lines() {
+        let formatted_line = format!("  {}", line);
+        println!("{}", format_with_border(&formatted_line, width));
+    }
+}
 
 fn highlight_code_snippets(code: &str, language: &str) -> String {
     let ps = SyntaxSet::load_defaults_newlines();
@@ -369,178 +369,6 @@ fn format_terminal_snippets(v: &[(Style, &str)]) -> String {
     s.push_str("\x1b[0m");
     s
 }
-// ORIGINAL print_snippet
-// fn print_snippet(snippet: &Snippet) {
-//     let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
-//     let created_line = format!(
-//         "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
-//         snippet.timestamp
-//     );
-//     let tag_line = format!(
-//         "  \x1b[33;1mSnippet's Tag:\x1b[0m \x1b[35;1m{}\x1b[0m",
-//         snippet.tag
-//     );
-//     let description_line = if let Some(desc) = &snippet.description {
-//         format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
-//     } else {
-//         String::new()
-//     };
-
-//     let all_lines = vec![
-//         strip_ansi_codes(&id_line),
-//         strip_ansi_codes(&tag_line),
-//         strip_ansi_codes(&created_line),
-//         strip_ansi_codes(&description_line),
-//     ]
-//     .into_iter()
-//     .chain(snippet.code.lines().map(|line| strip_ansi_codes(line)))
-//     .collect::<Vec<_>>();
-
-//     let max_line_length = all_lines
-//         .iter()
-//         .map(|line| line.chars().count())
-//         .max()
-//         .unwrap_or(0);
-
-//     let adjusted_width = max_line_length + 4;
-
-//     println!(
-//         "\x1b[34m{}\x1b[0m",
-//         "\x1b[34m╔\x1b[0m".to_owned()
-//             + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-//             + "\x1b[34m╗\x1b[0m"
-//     );
-//     println!("{}", format_with_border(&id_line, adjusted_width));
-//     println!("{}", format_with_border(&tag_line, adjusted_width));
-//     println!("{}", format_with_border(&created_line, adjusted_width));
-//     if !description_line.is_empty() {
-//         println!("{}", format_with_border(&description_line, adjusted_width));
-//     }
-//     println!(
-//         "\x1b[34m{}\x1b[0m",
-//         "\x1b[34m╟\x1b[0m".to_owned()
-//             + &"\x1b[34m─\x1b[0m".repeat(adjusted_width)
-//             + "\x1b[34m╢\x1b[0m"
-//     );
-//     print_formatted_code(&snippet.code, &snippet.language, adjusted_width);
-//     println!(
-//         "\x1b[34m{}\x1b[0m",
-//         "\x1b[34m╚\x1b[0m".to_owned()
-//             + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-//             + "\x1b[34m╝\x1b[0m\n"
-//     );
-// }
-
-
-// ORIGINAL print_snippet_summary
-// fn print_snippet_summary(snippet: &Snippet) {
-//     let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
-//     let tag_line = format!("  \x1b[33;1mTag:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.tag);
-//     let created_line = format!(
-//         "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
-//         snippet.timestamp
-//     );
-//     let description_line = if let Some(desc) = &snippet.description {
-//         format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
-//     } else {
-//         String::new()
-//     };
-//     let all_lines = vec![
-//         strip_ansi_codes(&id_line),
-//         strip_ansi_codes(&tag_line),
-//         strip_ansi_codes(&created_line),
-//         strip_ansi_codes(&description_line),
-//     ]
-//     .into_iter()
-//     .collect::<Vec<_>>();
-
-//     let max_line_length = all_lines
-//         .iter()
-//         .map(|line| line.chars().count())
-//         .max()
-//         .unwrap_or(0);
-
-//     let adjusted_width = max_line_length + 4;
-
-//     println!(
-//         "\x1b[34m{}\x1b[0m",
-//         "\x1b[34m╔\x1b[0m".to_owned()
-//             + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-//             + "\x1b[34m╗\x1b[0m"
-//     );
-//     println!("{}", format_with_border(&id_line, adjusted_width));
-//     println!("{}", format_with_border(&tag_line, adjusted_width));
-//     println!("{}", format_with_border(&created_line, adjusted_width));
-//     if !description_line.is_empty() {
-//         println!("{}", format_with_border(&description_line, adjusted_width));
-//     }
-//     println!(
-//         "\x1b[34m{}\x1b[0m",
-//         "\x1b[34m╚\x1b[0m".to_owned()
-//             + &"\x1b[34m═\x1b[0m".repeat(adjusted_width)
-//             + "\x1b[34m╝\x1b[0m\n"
-//     );
-// }
-
-fn format_with_border(content: &str, width: usize) -> String {
-    let stripped_content = strip_ansi_codes(content);
-    let padding = width.saturating_sub(stripped_content.chars().count());
-    format!(
-        "\x1b[34m║\x1b[0m{}{}\x1b[34m║\x1b[0m",
-        content,
-        " ".repeat(padding)
-    )
-}
-
-fn print_formatted_code(code: &str, language: &Option<String>, width: usize) {
-    let highlighted_code = if let Some(lang) = language {
-        highlight_code_snippets(code, lang)
-    } else {
-        code.to_string()
-    };
-
-    println!(
-        "{}",
-        format_with_border(&format!("\x1b[33;1m  Code:\x1b[0m"), width)
-    );
-    for line in highlighted_code.lines() {
-        let formatted_line = format!("  {}", line);
-        println!("{}", format_with_border(&formatted_line, width));
-    }
-}
-
-fn wrap_text(text: &str, max_width: usize) -> Vec<String> {
-    let words: Vec<&str> = text.split_whitespace().collect();
-    let mut lines = Vec::new();
-    let mut current_line = String::new();
-
-    for word in words {
-        if current_line.len() + word.len() + 1 > max_width {
-            if !current_line.is_empty() {
-                lines.push(current_line);
-                current_line = String::new();
-            }
-            if word.len() > max_width {
-                let (first, rest) = word.split_at(max_width);
-                lines.push(first.to_string());
-                current_line = rest.to_string();
-            } else {
-                current_line = word.to_string();
-            }
-        } else {
-            if !current_line.is_empty() {
-                current_line.push(' ');
-            }
-            current_line.push_str(word);
-        }
-    }
-
-    if !current_line.is_empty() {
-        lines.push(current_line);
-    }
-
-    lines
-}
 
 fn print_snippet(snippet: &Snippet) {
     let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
@@ -552,28 +380,21 @@ fn print_snippet(snippet: &Snippet) {
         "  \x1b[33;1mSnippet's Tag:\x1b[0m \x1b[35;1m{}\x1b[0m",
         snippet.tag
     );
+    let description_line = if let Some(desc) = &snippet.description {
+        format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
+    } else {
+        String::new()
+    };
 
-    let mut all_lines = vec![
+    let all_lines = vec![
         strip_ansi_codes(&id_line),
         strip_ansi_codes(&tag_line),
         strip_ansi_codes(&created_line),
-    ];
-
-    if let Some(desc) = &snippet.description {
-        let desc_prefix = "  \x1b[33;1mDescription:\x1b[0m";
-        let max_desc_width = 80 - strip_ansi_codes(desc_prefix).len();
-        let wrapped_desc = wrap_text(desc, max_desc_width);
-        for (i, line) in wrapped_desc.iter().enumerate() {
-            let desc_line = if i == 0 {
-                format!("{}\x1b[35;1m{}\x1b[0m", desc_prefix, line)
-            } else {
-                format!("{}  \x1b[35;1m{}\x1b[0m", " ".repeat(desc_prefix.len()), line)
-            };
-            all_lines.push(strip_ansi_codes(&desc_line));
-        }
-    }
-
-    all_lines.extend(snippet.code.lines().map(|line| strip_ansi_codes(line)));
+        strip_ansi_codes(&description_line),
+    ]
+    .into_iter()
+    .chain(snippet.code.lines().map(|line| strip_ansi_codes(line)))
+    .collect::<Vec<_>>();
 
     let max_line_length = all_lines
         .iter()
@@ -592,18 +413,8 @@ fn print_snippet(snippet: &Snippet) {
     println!("{}", format_with_border(&id_line, adjusted_width));
     println!("{}", format_with_border(&tag_line, adjusted_width));
     println!("{}", format_with_border(&created_line, adjusted_width));
-    if let Some(desc) = &snippet.description {
-        let desc_prefix = "  \x1b[33;1mDescription:\x1b[0m ";
-        let max_desc_width = adjusted_width - strip_ansi_codes(desc_prefix).len() - 4;
-        let wrapped_desc = wrap_text(desc, max_desc_width);
-        for (i, line) in wrapped_desc.iter().enumerate() {
-            let desc_line = if i == 0 {
-                format!("{}\x1b[35;1m{}\x1b[0m", desc_prefix, line)
-            } else {
-                format!("{}  \x1b[35;1m{}\x1b[0m", " ".repeat(desc_prefix.len()), line)
-            };
-            println!("{}", format_with_border(&desc_line, adjusted_width));
-        }
+    if !description_line.is_empty() {
+        println!("{}", format_with_border(&description_line, adjusted_width));
     }
     println!(
         "\x1b[34m{}\x1b[0m",
@@ -620,6 +431,7 @@ fn print_snippet(snippet: &Snippet) {
     );
 }
 
+
 fn print_snippet_summary(snippet: &Snippet) {
     let id_line = format!("  \x1b[33;1mID:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.id);
     let tag_line = format!("  \x1b[33;1mTag:\x1b[0m \x1b[35;1m{}\x1b[0m", snippet.tag);
@@ -627,26 +439,19 @@ fn print_snippet_summary(snippet: &Snippet) {
         "  \x1b[33;1mCreated:\x1b[0m \x1b[35;1m{}\x1b[0m",
         snippet.timestamp
     );
-
-    let mut all_lines = vec![
+    let description_line = if let Some(desc) = &snippet.description {
+        format!("  \x1b[33;1mDescription:\x1b[0m \x1b[35;1m{}\x1b[0m", desc)
+    } else {
+        String::new()
+    };
+    let all_lines = vec![
         strip_ansi_codes(&id_line),
         strip_ansi_codes(&tag_line),
         strip_ansi_codes(&created_line),
-    ];
-
-    if let Some(desc) = &snippet.description {
-        let desc_prefix = "  \x1b[33;1mDescription:\x1b[0m ";
-        let max_desc_width = 80 - strip_ansi_codes(desc_prefix).len();
-        let wrapped_desc = wrap_text(desc, max_desc_width);
-        for (i, line) in wrapped_desc.iter().enumerate() {
-            let desc_line = if i == 0 {
-                format!("{}\x1b[35;1m{}\x1b[0m", desc_prefix, line)
-            } else {
-                format!("{}  \x1b[35;1m{}\x1b[0m", " ".repeat(desc_prefix.len()), line)
-            };
-            all_lines.push(strip_ansi_codes(&desc_line));
-        }
-    }
+        strip_ansi_codes(&description_line),
+    ]
+    .into_iter()
+    .collect::<Vec<_>>();
 
     let max_line_length = all_lines
         .iter()
@@ -665,18 +470,8 @@ fn print_snippet_summary(snippet: &Snippet) {
     println!("{}", format_with_border(&id_line, adjusted_width));
     println!("{}", format_with_border(&tag_line, adjusted_width));
     println!("{}", format_with_border(&created_line, adjusted_width));
-    if let Some(desc) = &snippet.description {
-        let desc_prefix = "  \x1b[33;1mDescription:\x1b[0m ";
-        let max_desc_width = adjusted_width - strip_ansi_codes(desc_prefix).len() - 4;
-        let wrapped_desc = wrap_text(desc, max_desc_width);
-        for (i, line) in wrapped_desc.iter().enumerate() {
-            let desc_line = if i == 0 {
-                format!("{}\x1b[35;1m{}\x1b[0m", desc_prefix, line)
-            } else {
-                format!("{}  \x1b[35;1m{}\x1b[0m", " ".repeat(desc_prefix.len()), line)
-            };
-            println!("{}", format_with_border(&desc_line, adjusted_width));
-        }
+    if !description_line.is_empty() {
+        println!("{}", format_with_border(&description_line, adjusted_width));
     }
     println!(
         "\x1b[34m{}\x1b[0m",
