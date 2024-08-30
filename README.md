@@ -224,7 +224,7 @@ The **`export`** command exports saved snippets in language-specific format from
   	[export-id-command-demo.webm](https://github.com/user-attachments/assets/dfdc6379-789e-49a6-b959-b57ab81d945d)
 - **Export an snippet using tags only ;**
   ```
-  target/debug/codevault export --tags Rust
+  target/debug/codevault export --tag Rust
   ```
     **Demo:**
 
